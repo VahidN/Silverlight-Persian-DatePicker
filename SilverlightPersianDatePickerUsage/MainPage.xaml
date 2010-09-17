@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="SilverlightPersianDatePickerUsage.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:dp="clr-namespace:SilverlightPersianDatePicker.Views;assembly=SilverlightPersianDatePicker" 
+    xmlns:ug="clr-namespace:System.Windows.Controls.Primitives;assembly=SilverlightPersianDatePicker"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <ScrollViewer 
+        VerticalScrollBarVisibility="Auto" 
+        HorizontalScrollBarVisibility="Auto">
+        <ug:UniformGrid             
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Columns="2" Rows="3">
+            <dp:PDatePicker 
+                x:Name="txt2"
+                TextBoxWidth="100"
+                Margin="5"
+                />
+            <dp:PCalendar x:Name="pcal1"
+                      SelectedPersianDate="{Binding ElementName=txt2,Path=SelectedPersianDate, Mode=TwoWay}"
+                      Margin="5"
+                      />
+
+            <dp:PDatePicker 
+                SelectedPersianDate="1387/01/12"
+                x:Name="txt1"
+                TextBoxWidth="100"
+                Margin="5"
+                />
+            <dp:PCalendar x:Name="pcal2"
+                      SelectedPersianDate="{Binding ElementName=txt1,Path=SelectedPersianDate, Mode=TwoWay}"
+                      Margin="5"
+                      />
+
+
+            <dp:PDatePicker 
+                x:Name="txt3"
+                TextBoxWidth="100"
+                SelectedDate="2010/09/12"
+                Margin="5"
+                />
+            <dp:PCalendar x:Name="pcal3"
+                      SelectedPersianDate="{Binding ElementName=txt3,Path=SelectedPersianDate, Mode=TwoWay}"
+                      Margin="5"
+                      />
+        </ug:UniformGrid>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,186 @@
+﻿<UserControl x:Class="SilverlightPersianDatePicker.Views.PCalendar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+    FlowDirection="RightToLeft"
+    FontFamily="Tahoma" FontSize="11"               
+    xmlns:local="clr-namespace:System.Windows.Controls.Primitives" 
+    xmlns:conv="clr-namespace:SilverlightPersianDatePicker.Converters" 
+    d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+        <conv:ToPersianNumberConverter x:Key="convToPersianNumberConverter" />
+
+        <Storyboard x:Name="FlipAnim1">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                           Storyboard.TargetName="ItemsControlProjection1"
+                                           Storyboard.TargetProperty="RotationY">
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="00:00:00.2500000" Value="90">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00.25" Value="-90" />
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="{StaticResource MainBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="170" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                BorderThickness="1" CornerRadius="5" 
+                BorderBrush="{StaticResource HeaderBorderBrush}"
+                Background="{StaticResource HeaderBorderBackground}"
+                Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"
+                                Height="27" Margin="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="28" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="28" />
+                </Grid.ColumnDefinitions>
+
+                <HyperlinkButton 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Command="{Binding ClickPrev}"
+                    Grid.Column="0">
+                    <HyperlinkButton.Content>
+                        <Path 
+                            Data="M0,0.5 L1,1 1,0Z" Width="10" Height="8"
+                            Stretch="Fill" Fill="{StaticResource PrevNextFillColor}" />
+                    </HyperlinkButton.Content>
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="قبلي" FontFamily="Tahoma" 
+                               VerticalAlignment="Center"
+                               FontSize="11" Margin="2" />
+                    </ToolTipService.ToolTip>
+                </HyperlinkButton>
+
+                <HyperlinkButton 
+                    Grid.Column="1"
+                    Foreground="{StaticResource HeaderHyperlinkButtonForeground}"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"    
+                    Command="{Binding TitleClick}">
+                    <HyperlinkButton.Content>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                       FontSize="11" Foreground="{StaticResource HeaderHyperlinkButtonForeground}"
+                                       FontWeight="Bold"                                       
+                                       Text="{Binding CalendarGUIData.HeaderText, 
+                                                      Converter={StaticResource convToPersianNumberConverter}}"  />
+                    </HyperlinkButton.Content>
+                </HyperlinkButton>
+
+                <HyperlinkButton 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"                                        
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Command="{Binding ClickNext}"
+                    Grid.Column="2">
+                    <HyperlinkButton.Content>
+                        <Path 
+                            Data="M0,0 L1,0.5 0,1Z" Width="10" Height="8"
+                            Stretch="Fill" Fill="{StaticResource PrevNextFillColor}" />
+                    </HyperlinkButton.Content>
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="بعدي" FontFamily="Tahoma" 
+                               VerticalAlignment="Center"
+                               FontSize="11" Margin="2" />
+                    </ToolTipService.ToolTip>
+                </HyperlinkButton>
+            </Grid>
+        </Border>
+
+
+        <ItemsControl ItemsSource="{Binding DaysInfo}"
+                      VerticalAlignment="Top"     
+                      HorizontalAlignment="Center"
+                      Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+            <ItemsControl.Projection>
+                <PlaneProjection x:Name="ItemsControlProjection1"/>
+            </ItemsControl.Projection>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <local:UniformGrid
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Columns="{Binding CalendarGUIData.UniformGridColumns}" 
+                        Rows="{Binding CalendarGUIData.UniformGridRows}">
+                    </local:UniformGrid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ContentControl>
+                        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                BorderThickness="1" CornerRadius="3" BorderBrush="{Binding BorderBrush}"
+                                Background="{Binding BackgroundBrush}"                                
+                                Width="{Binding CellWidth}" Height="{Binding CellHeight}" Margin="1">
+                            <HyperlinkButton                                    
+                                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                FontSize="11" Foreground="{Binding Foreground}"
+                                FontWeight="{Binding FontWeight}"                   
+                                IsEnabled="{Binding HyperlinkIsEnabled}"
+                                Command="{Binding DataContext.DayClick, ElementName=LayoutRoot}"
+                                CommandParameter="{Binding Number}"
+                                Content="{Binding Number, Converter={StaticResource convToPersianNumberConverter}}"  />
+                        </Border>
+                    </ContentControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <StackPanel 
+            Grid.Row="2" 
+            Margin="0"
+            Name="TodayRoot"
+            Grid.ColumnSpan="4"
+            Background="{StaticResource FooterStackPanelBackground}"
+            HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <HyperlinkButton
+                        HorizontalAlignment="Center"                    
+                        HorizontalContentAlignment="Center"
+                        Command="{Binding ShowTodayClick}">
+                    <HyperlinkButton.Content>
+                        <TextBlock Foreground="{StaticResource FooterForeground}"
+                                HorizontalAlignment="Center"
+                                Text="امروز " FontWeight="Bold" />
+                    </HyperlinkButton.Content>
+                </HyperlinkButton>
+                <TextBlock 
+                    HorizontalAlignment="Center"                
+                    Text="{Binding CalendarGUIData.Today, 
+                    Converter={StaticResource convToPersianNumberConverter}}" 
+                        FontWeight="Bold" Foreground="{StaticResource FooterForeground}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

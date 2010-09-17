@@ -1,0 +1,798 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SilverlightPersianDatePicker</name>
+    </assembly>
+    <members>
+        <member name="T:SilverlightPersianDatePicker.Views.PCalendar">
+            <summary>
+            Calendar's view class.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PCalendar.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PCalendar.SelectedDateProperty">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PCalendar.SelectedPersianDateProperty">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PCalendar.#ctor">
+            <summary>
+            Initialization point.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PCalendar.SelectedDate">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PCalendar.SelectedPersianDate">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.PDateHelper">
+            <summary>
+            Persian Date Helper class
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.Find1StDayOfMonth(System.Int32,System.Int32)">
+            <summary>
+            Finds 1st day of the given year and month.
+            </summary>
+            <param name="year"></param>
+            <param name="monthIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.GregorianToHijri(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Converts Gregorian date To Hijri date.
+            </summary>
+            <param name="inYear"></param>
+            <param name="inMonth"></param>
+            <param name="inDay"></param>
+            <param name="outYear"></param>
+            <param name="outMonth"></param>
+            <param name="outDay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.HijriToGregorian(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>
+            Converts Hijri date To Gregorian date.
+            </summary>
+            <param name="inYear"></param>
+            <param name="inMonth"></param>
+            <param name="inDay"></param>
+            <param name="outYear"></param>
+            <param name="outMonth"></param>
+            <param name="outDay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.IsLeapYear(System.Int32)">
+            <summary>
+            Is a given year leap?
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.IsValid(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Is a given date valid?
+            </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.ExtractPersianDateParts(System.String)">
+            <summary>
+            Extracts year/month/day parts of a given Persian date string.
+            </summary>
+            <param name="inData">Persian date</param>
+            <returns></returns>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Views.PDatePicker">
+            <summary>
+            PDatePicker's view class
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.SelectedDateProperty">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.SelectedPersianDateProperty">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxHeightProperty">
+            <summary>
+            Height of the TextBox.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidthProperty">
+            <summary>
+            Width of the TextBox.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.#ctor">
+            <summary>
+            Initialization point.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.SelectedDate">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.SelectedPersianDate">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxHeight">
+            <summary>
+            Height of the TextBox.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidth">
+            <summary>
+            Width of the TextBox.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel">
+            <summary>
+            Persian CalendarViewModel class.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.#ctor">
+            <summary>
+            Initialization point.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.SelectThisDay(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Selecting a day from view.
+            </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <param name="day"></param>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.CalendarGUIData">
+            <summary>
+            Notifies GUI about the changes in CalendarGUIData.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ClickNext">
+            <summary>
+            ClickNext event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ClickPrev">
+            <summary>
+            ClickPrev event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.DayClick">
+            <summary>
+            DayClick event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.DaysInfo">
+            <summary>
+            Notifies GUI about current view data of the calendar.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ShowTodayClick">
+            <summary>
+            ShowTodayClick event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.TitleClick">
+            <summary>
+            TitleClick event handler.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.StartAnimation">
+            <summary>
+            StartAnimation Event.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.PropertyChanged">
+            <summary>
+            PropertyChanged notification.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.StartAnimationEventHandler">
+            <summary>
+            Our custom delegate for starting an animation after each update.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Models.CalendarGUI">
+            <summary>
+            General info's of a calendar's page.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.HeaderText">
+            <summary>
+            HeaderText of the calendar.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.SelectedDate">
+            <summary>
+            SelectedDate in Gregorian format.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.SelectedPersianDate">
+            <summary>
+            SelectedDate in Persian format.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.Today">
+            <summary>
+            Shows today's string.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.UniformGridColumns">
+            <summary>
+            Number of UniformGrid's Columns.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.UniformGridRows">
+            <summary>
+            Number of UniformGrid's Rows.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.Models.CalendarGUI.PropertyChanged">
+            <summary>
+            PropertyChanged notification.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.Names">
+            <summary>
+            Default names of the Persian calendar.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.Names.MonthNames">
+            <summary>
+            MonthNames in the Persian calendar.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.Names.DaysOfWeek">
+            <summary>
+            DaysOfWeek in the Persian calendar.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Converters.ToPersianNumberConverter">
+            <summary>
+            IValueConverter class for converting English numbers to Persian numbers in reports.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Models.DayInfo">
+            <summary>
+            Calendar's cells info model.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.BackgroundBrush">
+            <summary>
+            BackgroundBrush of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.BorderBrush">
+            <summary>
+            BorderBrush of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.CellHeight">
+            <summary>
+            Height of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.CellWidth">
+            <summary>
+            Width of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.FontWeight">
+            <summary>
+            FontWeight of a cell's Text.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.Foreground">
+            <summary>
+            Foreground of a cell's Text.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.HyperlinkIsEnabled">
+            <summary>
+            Is Hyperlink of a cell enabled?
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.Number">
+            <summary>
+            Text of a cell.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.Models.DayInfo.PropertyChanged">
+            <summary>
+            PropertyChanged notification.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.Numbers">
+            <summary>
+            English numbers to Persian numbers converter and vice versa.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.Numbers.ToPersianNumbers(System.String)">
+            <summary>
+            Converts English digits of a given string to their equivalent Persian digits.
+            </summary>
+            <param name="data">English number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.Numbers.ToEnglishNumbers(System.String)">
+            <summary>
+            Converts Persian digits of a given string to their equivalent English digits.
+            </summary>
+            <param name="data">Persian number</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Windows.Controls.Primitives.UniformGrid">
+            <summary>
+            A UniformGrid implementation for Silverlight that arranges children in a
+            grid with all equal cell sizes.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.UniformGrid.#ctor">
+            <summary>
+            Initializes a new instance of UniformGrid.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Primitives.UniformGrid.FirstColumnProperty">
+            <summary>
+            The FirstColumnProperty dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Primitives.UniformGrid.ColumnsProperty">
+            <summary>
+            DependencyProperty for the Columns property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.UniformGrid.OnIntegerDependencyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Validate the new property value and silently revert if the new value
+            is not appropriate. Used in place of WPF value coercian by the 
+            dependency properties in UniformGrid.
+            </summary>
+            <param name="o">The dependency object.</param>
+            <param name="e">The dependency property.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Primitives.UniformGrid.RowsProperty">
+            <summary>
+            The Rows DependencyProperty.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.UniformGrid.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Compute the desired size of the UniformGrid by measuring all of the
+            children with a constraint equal to a cell's portion of the given
+            constraint. The maximum child width and maximum child height are 
+            tracked, and then the desired size is computed by multiplying these
+            maximums by the row and column count.
+            </summary>
+            <param name="constraint">The size constraint.</param>
+            <returns>Returns the desired size.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.UniformGrid.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Arrange the children of the UniformGrid by distributing space evenly
+            among the children, making each child the size equal to a cell
+            portion of the arrangeSize parameter.
+            </summary>
+            <param name="arrangeSize">The arrange size.</param>
+            <returns>Returns the updated Size.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.Primitives.UniformGrid.UpdateComputedValues">
+            <summary>
+            If the Rows or Columns values are set to 0, dynamically compute the
+            values based on the actual number of non-collapsed children.
+            </summary>
+            <remarks>
+            In the case when both Rows and Columns are set to 0, the Rows and 
+            Columns will be equal, laying out a square grid.
+            </remarks>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.UniformGrid.ComputedRows">
+            <summary>
+            Gets or sets the computed row value.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.UniformGrid.ComputedColumns">
+            <summary>
+            Gets or sets the computed column value.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.UniformGrid.FirstColumn">
+            <summary>
+            Gets or sets the number of first columns to leave blank.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.UniformGrid.Columns">
+            <summary>
+            Gets or sets the number of columns in the grid. A value of zero 
+            indicates that the count should be dynamically computed based on the
+            number of rows and the number of non-collapsed children in the grid.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Primitives.UniformGrid.Rows">
+            <summary>
+            Gets or sets the number of rows in the grid. A value of zero 
+            indicates that the row count should be dynamically computed based on
+            the number of columns and the number of non-collapsed children in
+            the grid.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.MVVMHelper.DelegateCommand`1">
+            <summary>
+            Simplifies SL4 commanding.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:System.Globalization.PersianCalendar">
+            <summary>
+            Represents the PersianCalendar calendar.
+            </summary>
+            <version>1.0.2.0</version>
+            <author>
+              <name>Omid Khandan Rad</name>
+              <email>omidkrad@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:System.Globalization.PersianCalendar.PersianEra">
+            <summary>
+            Represents the current era.
+            </summary>
+            <remarks>The Persian calendar recognizes one era: A.P. (Latin "Anno Persarum", which means "the year of/for Persians").</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.AddMonths(System.DateTime,System.Int32)">
+            <summary>
+            Returns a DateTime that is the specified number of months away from the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to add.</param>
+            <param name="months">The number of months to add.</param>
+            <returns>The DateTime that results from adding the specified number of months to the specified DateTime.</returns>
+            <remarks>
+            The year part of the resulting DateTime is affected if the resulting month is beyond the last month of the current year. The day part of the resulting DateTime is also affected if the resulting day is not a valid day in the resulting month of the resulting year; it is changed to the last valid day in the resulting month of the resulting year. The time-of-day part of the resulting DateTime remains the same as the specified DateTime.
+            
+            For example, if the specified month is Ordibehesht, which is the 2nd month and has 31 days, the specified day is the 31th day of that month, and the value of the months parameter is -3, the resulting year is one less than the specified year, the resulting month is Bahman, and the resulting day is the 30th day, which is the last day in Bahman.
+            
+            If the value of the months parameter is negative, the resulting DateTime would be earlier than the specified DateTime.
+            </remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.AddYears(System.DateTime,System.Int32)">
+            <summary>
+            Returns a DateTime that is the specified number of years away from the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to add.</param>
+            <param name="years">The number of years to add.</param>
+            <returns>The DateTime that results from adding the specified number of years to the specified DateTime.</returns>
+            <remarks>
+            The day part of the resulting DateTime is affected if the resulting day is not a valid day in the resulting month of the resulting year; it is changed to the last valid day in the resulting month of the resulting year. The time-of-day part of the resulting DateTime remains the same as the specified DateTime.
+            
+            For example, Esfand has 29 days, except during leap years when it has 30 days. If the specified date is the 30th day of Esfand in a leap year and the value of years is 1, the resulting date will be the 29th day of Esfand in the following year.
+            
+            If years is negative, the resulting DateTime would be earlier than the specified DateTime.
+            </remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetDayOfMonth(System.DateTime)">
+            <summary>
+            Gets the day of the month in the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to read.</param>
+            <returns>An integer from 1 to 31 that represents the day of the month in time.</returns>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetDayOfWeek(System.DateTime)">
+            <summary>
+            Gets the day of the week in the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to read.</param>
+            <returns>A DayOfWeek value that represents the day of the week in time.</returns>
+            <remarks>The DayOfWeek values are Sunday which indicates YekShanbe', Monday which indicates DoShanbe', Tuesday which indicates SeShanbe', Wednesday which indicates ChaharShanbe', Thursday which indicates PanjShanbe', Friday which indicates Jom'e, and Saturday which indicates Shanbe'.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetDayOfYear(System.DateTime)">
+            <summary>
+            Gets the day of the year in the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to read.</param>
+            <returns>An integer from 1 to 366 that represents the day of the year in time.</returns>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetDaysInMonth(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the number of days in the specified month.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="month">An integer that represents the month.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>The number of days in the specified month in the specified year in the specified era.</returns>
+            <remarks>For example, this method might return 29 or 30 for Esfand (month = 12), depending on whether year is a leap year.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetDaysInYear(System.Int32,System.Int32)">
+            <summary>
+            Gets the number of days in the year specified by the year and era parameters.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>The number of days in the specified year in the specified era.</returns>
+            <remarks>For example, this method might return 365 or 366, depending on whether year is a leap year.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetEra(System.DateTime)">
+            <summary>
+            Gets the era in the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to read.</param>
+            <returns>An integer that represents the era in time.</returns>
+            <remarks>The Persian calendar recognizes one era: A.P. (Latin "Anno Persarum", which means "the year of/for Persians").</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetMonth(System.DateTime)">
+            <summary>
+            Gets the month in the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to read.</param>
+            <returns>An integer between 1 and 12 that represents the month in time.</returns>
+            <remarks>Month 1 indicates Farvardin, month 2 indicates Ordibehesht, month 3 indicates Khordad, month 4 indicates Tir, month 5 indicates Amordad, month 6 indicates Shahrivar, month 7 indicates Mehr, month 8 indicates Aban, month 9 indicates Azar, month 10 indicates Dey, month 11 indicates Bahman, and month 12 indicates Esfand.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetMonthsInYear(System.Int32,System.Int32)">
+            <summary>
+            Gets the number of months in the year specified by the year and era parameters.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>The number of months in the specified year in the specified era.</returns>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetYear(System.DateTime)">
+            <summary>
+            Gets the year in the specified DateTime.
+            </summary>
+            <param name="time">The DateTime instance to read.</param>
+            <returns>An integer between 1 and 9378 that represents the year in time.</returns>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.IsLeapDay(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Determines whether the date specified by the year, month, day, and era parameters is a leap day.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="month">An integer that represents the month.</param>
+            <param name="day">An integer that represents the day.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>true if the specified day is a leap day; otherwise, false.</returns>
+            <remarks>
+            In the Persian calendar leap years are applied every 4 or 5 years according to a certain pattern that iterates in a 2820-year cycle. A common year has 365 days and a leap year has 366 days.
+            
+            A leap day is a day that occurs only in a leap year. In the Persian calendar, the 30th day of Esfand (month 12) is the only leap day.
+            </remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.IsLeapMonth(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Determines whether the month specified by the year, month, and era parameters is a leap month.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="month">An integer that represents the month.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>This method always returns false, unless overridden by a derived class.</returns>
+            <remarks>
+            In the Persian calendar leap years are applied every 4 or 5 years according to a certain pattern that iterates in a 2820-year cycle. A common year has 365 days and a leap year has 366 days.
+            
+            A leap month is an entire month that occurs only in a leap year. The Persian calendar does not have any leap months.
+            </remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.IsLeapYear(System.Int32,System.Int32)">
+            <summary>
+            Determines whether the year specified by the year and era parameters is a leap year.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>true if the specified year is a leap year; otherwise, false.</returns>
+            <remarks>In the Persian calendar leap years are applied every 4 or 5 years according to a certain pattern that iterates in a 2820-year cycle. A common year has 365 days and a leap year has 366 days.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns a DateTime that is set to the specified date and time in the specified era.
+            </summary>
+            <param name="year">An integer that represents the year.</param>
+            <param name="month">An integer that represents the month.</param>
+            <param name="day">An integer that represents the day.</param>
+            <param name="hour">An integer that represents the hour.</param>
+            <param name="minute">An integer that represents the minute.</param>
+            <param name="second">An integer that represents the second.</param>
+            <param name="millisecond">An integer that represents the millisecond.</param>
+            <param name="era">An integer that represents the era.</param>
+            <returns>The DateTime instance set to the specified date and time in the current era.</returns>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.ToFourDigitYear(System.Int32)">
+            <summary>
+            Converts the specified two-digit year to a four-digit year by using the Globalization.PersianCalendar.TwoDigitYearMax property to determine the appropriate century.
+            </summary>
+            <param name="year">A two-digit integer that represents the year to convert.</param>
+            <returns>An integer that contains the four-digit representation of year.</returns>
+            <remarks>TwoDigitYearMax is the last year in the 100-year range that can be represented by a two-digit year. The century is determined by finding the sole occurrence of the two-digit year within that 100-year range. For example, if TwoDigitYearMax is set to 1429, the 100-year range is from 1330 to 1429; therefore, a 2-digit value of 30 is interpreted as 1330, while a 2-digit value of 29 is interpreted as 1429.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.GetCentury(System.DateTime)">
+            <summary>
+            Gets the century of the specified DateTime.
+            </summary>
+            <param name="time">An instance of the DateTime class to read.</param>
+            <returns>An integer from 1 to 94 that represents the century.</returns>
+            <remarks>A century is a whole 100-year period. So the century 14 for example, represents years 1301 through 1400.</remarks>
+        </member>
+        <member name="M:System.Globalization.PersianCalendar.NumberOfLeapYearsUntil(System.Int32)">
+            <summary>
+            Calculates the number of leap years until -but not including- the specified year.
+            </summary>
+            <param name="year">An integer between 1 and 9378</param>
+            <returns>An integer representing the number of leap years that have occured by the year specified.</returns>
+            <remarks>In the Persian calendar leap years are applied every 4 or 5 years according to a certain pattern that iterates in a 2820-year cycle. A common year has 365 days and a leap year has 366 days.</remarks>
+        </member>
+        <member name="P:System.Globalization.PersianCalendar.Eras">
+            <summary>
+            Gets the list of eras in the PersianCalendar.
+            </summary>
+            <remarks>The Persian calendar recognizes one era: A.P. (Latin "Anno Persarum", which means "the year of/for Persians").</remarks>
+        </member>
+        <member name="P:System.Globalization.PersianCalendar.TwoDigitYearMax">
+            <summary>
+            Gets and sets the last year of a 100-year range that can be represented by a 2-digit year.
+            </summary>
+            <property_value>The last year of a 100-year range that can be represented by a 2-digit year.</property_value>
+            <remarks>This property allows a 2-digit year to be properly translated to a 4-digit year. For example, if this property is set to 1429, the 100-year range is from 1330 to 1429; therefore, a 2-digit value of 30 is interpreted as 1330, while a 2-digit value of 29 is interpreted as 1429.</remarks>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Brushes.CustomBrushes">
+            <summary>
+            Different custom brushes for cells of the calendar.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.BorderBlueBackground">
+            <summary>
+            Normal cells background brush.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.CellsBorederBrush">
+            <summary>
+            Normal cells BorederBrush.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.CellsForeground">
+            <summary>
+            Normal cells texts Foreground.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderBackground">
+            <summary>
+            Background's brush of header.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderBorderBrush">
+            <summary>
+            BorderBrush of Header.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderForeground">
+            <summary>
+            Header's Foreground
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HighlightBackground">
+            <summary>
+            Background brush of selected cells.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HightlightBorderBrush">
+            <summary>
+            BorderBrush of selected cells.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HightlightForeground">
+            <summary>
+            Foreground brush of selected cells.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.TodayBackground">
+            <summary>
+            Today's Background brush.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.TodayBorderBrush">
+            <summary>
+            Today's BorderBrush.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.CalendarMode">
+            <summary>
+            Different supported visual modes of the Calendar.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Month">
+            <summary>
+            Month view of the Calendar.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Year">
+            <summary>
+            Year view of the Calendar.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Decade">
+            <summary>
+            Decade view of the Calendar.
+            </summary>
+        </member>
+    </members>
+</doc>

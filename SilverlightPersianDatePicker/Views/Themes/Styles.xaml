@@ -1,0 +1,28 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="DropShadowEffectColor">#FF898888</Color>
+
+    <SolidColorBrush x:Key="MainBackground" Color="White"/>
+
+    <SolidColorBrush x:Key="HeaderBorderBrush" Color="#77d5f7" />
+
+    <LinearGradientBrush StartPoint ="0,0" EndPoint ="0,1" x:Key="HeaderBorderBackground">
+        <GradientStop Color ="#72b9d7" Offset ="0"/>
+        <GradientStop Color ="#49a4cb" Offset ="0.5"/>
+        <GradientStop Color ="#72b9d7" Offset ="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="PrevNextFillColor" Color="#FFFFFF" />
+
+    <SolidColorBrush x:Key="HeaderHyperlinkButtonForeground" Color="White" />
+
+    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5" x:Key="FooterStackPanelBackground">
+        <GradientStop Color="#FFEB3030" Offset="0" />
+        <GradientStop Color="White" Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="FooterForeground" Color="White" />
+
+</ResourceDictionary>
