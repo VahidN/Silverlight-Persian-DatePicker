@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>SilverlightPersianDatePicker</name>
+    <version>1.0.0.0</version>
+    <publickeytoken>f96baa54e3aca91a</publickeytoken>
+    <relpath>SilverlightPersianDatePicker.dll</relpath>
+    <extension downloadUri="SilverlightPersianDatePicker.zip" />
+  </assembly>
+</manifest>
