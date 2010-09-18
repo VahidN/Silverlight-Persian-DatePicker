@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.ComponentModel;
 
 namespace SilverlightPersianDatePicker.Views
 {
@@ -81,7 +82,12 @@ namespace SilverlightPersianDatePicker.Views
         public string SelectedDate
         {
             get { return (string)GetValue(SelectedDateProperty); }
-            set { SetValue(SelectedDateProperty, value); }
+            set 
+            {
+                pcal1.SelectedDate = value;
+                SetValue(SelectedDateProperty, value);
+                persianCalnedarPopup.IsOpen = false;                
+            }
         }
 
         /// <summary>
@@ -95,7 +101,7 @@ namespace SilverlightPersianDatePicker.Views
                 //todo: validation
                 pcal1.SelectedPersianDate = value;
                 SetValue(SelectedPersianDateProperty, value);
-                persianCalnedarPopup.IsOpen = false;
+                persianCalnedarPopup.IsOpen = false;                
             }
         }
 

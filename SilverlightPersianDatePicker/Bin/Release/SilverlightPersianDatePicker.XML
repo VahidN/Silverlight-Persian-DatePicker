@@ -794,5 +794,14 @@
             Decade view of the Calendar.
             </summary>
         </member>
+        <member name="T:SilverlightPersianDatePicker.Converters.ToPersianDateConverter">
+            <summary>
+            IValueConverter class for converting Gregorian Date to Persian Date.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
     </members>
 </doc>

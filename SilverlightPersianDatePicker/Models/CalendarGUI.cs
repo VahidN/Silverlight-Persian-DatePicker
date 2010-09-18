@@ -33,6 +33,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _headerText; }
             set
             {
+                if (_headerText == value) return;
                 _headerText = value;
                 raisePropertyChanged("HeaderText");
             }
@@ -49,6 +50,7 @@ namespace SilverlightPersianDatePicker.Models
             }
             set
             {
+                if (_selectedDate == value) return;
                 _selectedDate = value;
                 raisePropertyChanged("SelectedDate");
             }
@@ -62,6 +64,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _selectedPersianDate; }
             set
             {
+                if (_selectedPersianDate == value) return;
                 _selectedPersianDate = value;
                 raisePropertyChanged("SelectedPersianDate");
             }
@@ -75,6 +78,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _today; }
             set
             {
+                if (_today == value) return;
                 _today = value;
                 raisePropertyChanged("Today");
             }
@@ -88,6 +92,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _uniformGridColumns; }
             set
             {
+                if (_uniformGridColumns == value) return;
                 _uniformGridColumns = value;
                 raisePropertyChanged("UniformGridColumns");
             }
@@ -101,6 +106,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _uniformGridRows; }
             set
             {
+                if (_uniformGridRows == value) return;
                 _uniformGridRows = value;
                 raisePropertyChanged("UniformGridRows");
             }

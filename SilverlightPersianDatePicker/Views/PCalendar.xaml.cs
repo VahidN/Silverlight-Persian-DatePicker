@@ -13,7 +13,7 @@ namespace SilverlightPersianDatePicker.Views
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
     /// </author>    
-    public partial class PCalendar
+    public partial class PCalendar 
     {
         #region Fields (3)
 
@@ -68,7 +68,7 @@ namespace SilverlightPersianDatePicker.Views
             }
             set
             {
-                SetValue(SelectedDateProperty, value);
+                SetValue(SelectedDateProperty, value);                
             }
         }
 
@@ -81,7 +81,7 @@ namespace SilverlightPersianDatePicker.Views
             set
             {
                 //todo: validation
-                SetValue(SelectedPersianDateProperty, value);
+                SetValue(SelectedPersianDateProperty, value);                
             }
         }
 
@@ -95,7 +95,7 @@ namespace SilverlightPersianDatePicker.Views
         {
             if (e.PropertyName == "CalendarGUIData")
             {
-                SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString();               
+                SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString("yyyy/MM/dd");               
                 SelectedPersianDate = _calendarViewModel.CalendarGUIData.SelectedPersianDate;
             }
         }
@@ -132,9 +132,7 @@ namespace SilverlightPersianDatePicker.Views
 
             DateTime result;
             if (!DateTime.TryParse(eDate, out result)) return;
-            var gDate = result;
-
-            if (gDate == _calendarViewModel.CalendarGUIData.SelectedDate) return;
+            var gDate = result;            
 
             //تبديل به تاريخ فارسي
             int year, month, day;
@@ -153,7 +151,7 @@ namespace SilverlightPersianDatePicker.Views
             if (e.NewValue == null) return;
             var pDate = e.NewValue.ToString();
             if (string.IsNullOrWhiteSpace(pDate)) return;            
-            if (pDate == _calendarViewModel.CalendarGUIData.SelectedPersianDate) return;
+            
             var parts = PDateHelper.ExtractPersianDateParts(pDate);
             var year = parts.Item1;
             var month = parts.Item2;
