@@ -20,14 +20,16 @@ namespace SilverlightPersianDatePicker.ViewModels
     /// </author>    
     public class PCalendarViewModel : INotifyPropertyChanged
     {
-        #region Fields (6)
+        #region Fields (8)
 
         private CalendarGUI _calendarGuiData;
         private int _currentMonth;
         private int _currentYear;
         private ObservableCollection<DayInfo> _daysInfo;
         private int _inc;
+        int _lastMonthIndex = -1;
         private int _lastSelectedIdx = -1;
+        int _lastYear = -1;
 
         #endregion Fields
 
@@ -128,6 +130,7 @@ namespace SilverlightPersianDatePicker.ViewModels
         #region Methods (23)
 
         // Public Methods (1) 
+
         /// <summary>
         /// Selecting a day from view.
         /// </summary>
@@ -278,6 +281,12 @@ namespace SilverlightPersianDatePicker.ViewModels
 
         private void getInfoSetCalendar(int monthIndex, int year)
         {
+            //saves some cpu cycles...
+            if (monthIndex == _lastMonthIndex && year == _lastYear) return;
+            //cache
+            _lastMonthIndex = monthIndex;
+            _lastYear = year;
+
             calendarMode = CalendarMode.Month;
             _currentYear = year;
             _currentMonth = monthIndex - 1;

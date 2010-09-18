@@ -36,6 +36,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _backgroundBrush; }
             set
             {
+                if (_backgroundBrush == value) return;
                 _backgroundBrush = value;
                 raisePropertyChanged("BackgroundBrush");
             }
@@ -49,6 +50,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _borderBrush; }
             set
             {
+                if (_borderBrush == value) return;
                 _borderBrush = value;
                 raisePropertyChanged("BorderBrush");
             }
@@ -62,6 +64,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _cellHeight; }
             set
             {
+                if (_cellHeight == value) return;
                 _cellHeight = value;
                 raisePropertyChanged("CellHeight");
             }
@@ -75,6 +78,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _cellWidth; }
             set
             {
+                if (_cellWidth == value) return;
                 _cellWidth = value;
                 raisePropertyChanged("CellWidth");
             }
@@ -91,6 +95,7 @@ namespace SilverlightPersianDatePicker.Models
             }
             set
             {
+                if (_fontWeight == value) return;
                 _fontWeight = value;
                 raisePropertyChanged("FontWeight");
             }
@@ -104,6 +109,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _foreground; }
             set
             {
+                if (_foreground == value) return;
                 _foreground = value;
                 raisePropertyChanged("Foreground");
             }
@@ -117,6 +123,7 @@ namespace SilverlightPersianDatePicker.Models
             get { return _hyperlinkIsEnabled; }
             set
             {
+                if (_hyperlinkIsEnabled == value) return;
                 _hyperlinkIsEnabled = value;
                 raisePropertyChanged("HyperlinkIsEnabled");
             }
@@ -133,6 +140,7 @@ namespace SilverlightPersianDatePicker.Models
             }
             set
             {
+                if (_number == value) return;
                 _number = value;
                 raisePropertyChanged("Number");
             }

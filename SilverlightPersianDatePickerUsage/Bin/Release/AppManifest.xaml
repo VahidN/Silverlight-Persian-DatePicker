@@ -4,5 +4,6 @@
   </Deployment.Parts>
   <Deployment.ExternalParts>
     <ExtensionPart Source="SilverlightPersianDatePicker.zip" />
+    <ExtensionPart Source="System.Windows.Controls.Navigation.zip" />
   </Deployment.ExternalParts>
 </Deployment>

@@ -65,6 +65,7 @@
     <Compile Include="Behaviors\Popup.cs" />
     <Compile Include="Brushes\CustomBrushes.cs" />
     <Compile Include="Components\UniformGrid.cs" />
+    <Compile Include="Converters\ToPersianDateConverter.cs" />
     <Compile Include="Converters\ToPersianNumberConverter.cs" />
     <Compile Include="DateHelper\CalendarMode.cs" />
     <Compile Include="DateHelper\Names.cs" />
