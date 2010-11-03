@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="WpfPersianDatePicker.Views.PDatePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:conv="clr-namespace:WpfPersianDatePicker.Converters" 
+             xmlns:Views1="clr-namespace:WpfPersianDatePicker.Views" FlowDirection="RightToLeft"
+             FontFamily="Tahoma" FontSize="11"                            
+             d:DesignHeight="400" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary x:Key="res1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:ToPersianNumberConverter x:Key="convToPersianNumberConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Name="LayoutRoot"                                 
+                FlowDirection="RightToLeft"
+                Background="Transparent"
+                HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"  />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <TextBox Name="dateTextBox"       
+                 Grid.Column="0"
+                 VerticalContentAlignment="Center"
+                 Width="{Binding TextBoxWidth}"
+                 Height="{Binding TextBoxHeight}"
+                 FlowDirection="LeftToRight" 
+                 VerticalAlignment="Center" 
+                 IsReadOnly="True"                 
+                 Text="{Binding 
+                                ElementName=pcal1, 
+                                Path=SelectedPersianDate,
+                                NotifyOnValidationError=True, 
+                                ValidatesOnDataErrors=True, 
+                                ValidatesOnExceptions=True,
+                                Converter={StaticResource convToPersianNumberConverter}}"
+                     HorizontalAlignment="Stretch" 
+                     TextChanged="dateTextBoxTextChanged"                  
+                     >
+        </TextBox>
+
+        <TextBlock 
+            Grid.Column="1"
+            Width="24"                        
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center">
+                    <Hyperlink                        
+                            Name="openCalendarButton"                               
+                            Click="openCalendarButtonClick">
+                        <StackPanel>
+                                <Image Source="Images/date.png" VerticalAlignment="Center" />                        
+                                <Popup Name="persianCalnedarPopup"               
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Top"
+                                       PopupAnimation="Fade"
+                                       AllowsTransparency="True"               
+                                       PlacementTarget="{Binding ElementName=openCalendarButton}"
+                                       StaysOpen="false">
+                                    <Border Background="White" 
+                                                        BorderThickness="1" 
+                                                        BorderBrush="Gray" 
+                                                        CornerRadius="3">
+                                        <Border.Effect>
+                                            <DropShadowEffect 
+                                                            BlurRadius="50" 
+                                                            Opacity="0.69" 
+                                                            Direction="300" 
+                                                            ShadowDepth="1" 
+                                                            Color="{StaticResource DropShadowEffectColor}" />
+                                        </Border.Effect>
+                                        <StackPanel Orientation="Vertical">
+                                            <Views1:PCalendar                         
+                                                                SelectedPersianDate="{Binding SelectedPersianDate, Mode=TwoWay}"
+                                                                SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
+                                                                x:Name="pcal1"  />
+                                        </StackPanel>
+                                    </Border>
+                                </Popup>
+                        </StackPanel>                        
+                        <ToolTipService.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images/date.png" Width="16" Height="16"                                                                  
+                                       Margin="2" VerticalAlignment="Center" />
+                                <TextBlock Text="نمايش تقويم" FontFamily="Tahoma" 
+                                           VerticalAlignment="Center"
+                                           FontSize="11" Margin="2" />
+                            </StackPanel>
+                        </ToolTipService.ToolTip>
+                    </Hyperlink>
+        </TextBlock>
+    </Grid>
+</UserControl>

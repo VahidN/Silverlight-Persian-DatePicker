@@ -45,7 +45,7 @@
             Height="100" 
             ItemsSource="{Binding Users}"
             Margin="5"
-            Name="listBox1" 
+            Name="listBox1"                         
             VerticalAlignment="Top">
             <ListBox.ItemTemplate>
                 <DataTemplate>
