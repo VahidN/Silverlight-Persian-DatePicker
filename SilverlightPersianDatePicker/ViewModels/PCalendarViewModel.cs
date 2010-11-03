@@ -127,7 +127,7 @@ namespace SilverlightPersianDatePicker.ViewModels
 
         #endregion Delegates and Events
 
-        #region Methods (23)
+        #region Methods (24)
 
         // Public Methods (1) 
 
@@ -143,7 +143,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             //select that day
             highlightThisday(year, month, day);
         }
-        // Private Methods (22) 
+        // Private Methods (23) 
 
         private static bool canClickNext(string obj)
         {
@@ -417,6 +417,12 @@ namespace SilverlightPersianDatePicker.ViewModels
             }
         }
 
+        private void resetTheCache()
+        {
+            _lastMonthIndex = -1;
+            _lastYear = -1;
+        }
+
         private void setToday()
         {
             int outYear, outMonth, outDay;
@@ -495,6 +501,8 @@ namespace SilverlightPersianDatePicker.ViewModels
 
         private void showTodayClick(string obj)
         {
+            resetTheCache();
+
             int outYear, outMonth, outDay;
             PDateHelper.GregorianToHijri(
                 DateTime.Now.Year,
@@ -535,6 +543,8 @@ namespace SilverlightPersianDatePicker.ViewModels
 
         private void titleClick(string obj)
         {
+            resetTheCache();
+
             switch (calendarMode)
             {
                 case CalendarMode.Month:
