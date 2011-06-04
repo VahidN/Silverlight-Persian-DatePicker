@@ -81,6 +81,9 @@
     </Compile>
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Users.cs" />
+    <Compile Include="NormalTest.xaml.cs">
+      <DependentUpon>NormalTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

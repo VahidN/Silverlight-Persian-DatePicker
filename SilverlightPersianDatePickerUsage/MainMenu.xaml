@@ -13,6 +13,7 @@
             <Navigation:UriMapping Uri="/MainPage" MappedUri="/MainPage.xaml" />
             <Navigation:UriMapping Uri="/TestView" MappedUri="/TestView.xaml" />
             <Navigation:UriMapping Uri="/TestView2" MappedUri="/TestView2.xaml" />
+            <Navigation:UriMapping Uri="/NormalTest" MappedUri="/NormalTest.xaml" />
         </Navigation:UriMapper>
     </navigation:Page.Resources>
     <Grid x:Name="LayoutRoot">
@@ -24,6 +25,7 @@
             <HyperlinkButton Content="مثال يك" Margin="5" NavigateUri="/MainPage" />
             <HyperlinkButton Content="مثال دو" Margin="5" NavigateUri="/TestView"/>
             <HyperlinkButton Content="مثال سه" Margin="5" NavigateUri="/TestView2"/>
+            <HyperlinkButton Content="مثال چهار" Margin="5" NavigateUri="/NormalTest"/>            
         </StackPanel>
         <navigation:Frame Grid.Column="1"                           
                           HorizontalContentAlignment="Stretch"
