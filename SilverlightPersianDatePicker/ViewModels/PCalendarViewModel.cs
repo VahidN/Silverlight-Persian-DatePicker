@@ -443,6 +443,8 @@ namespace SilverlightPersianDatePicker.ViewModels
 
         private void setTodayData(int year, int month, int day)
         {
+            resetGui();
+
             var pDate = string.Format("{0}/{1}/{2}", year, month.ToString("00"), day.ToString("00"));
             CalendarGUIData.SelectedPersianDate = pDate;
 
@@ -450,6 +452,13 @@ namespace SilverlightPersianDatePicker.ViewModels
             PDateHelper.HijriToGregorian(year, month, day, out outYear, out outMonth, out outDay);
             var gDate = new DateTime(outYear, outMonth, outDay);
             CalendarGUIData.SelectedDate = gDate;
+            raisePropertyChanged("CalendarGUIData");
+        }
+
+        private void resetGui()
+        {
+            CalendarGUIData.SelectedPersianDate = string.Empty;
+            CalendarGUIData.SelectedDate = default(DateTime);
             raisePropertyChanged("CalendarGUIData");
         }
 

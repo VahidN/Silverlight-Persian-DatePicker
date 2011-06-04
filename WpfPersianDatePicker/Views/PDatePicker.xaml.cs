@@ -127,7 +127,7 @@ namespace WpfPersianDatePicker.Views
         // Private Methods (5) 
 
         private void beginAnimation()
-        {
+        {            
             var stBoard = pcal1.Resources["FlipAnim1"] as Storyboard;
             if (stBoard == null) return;
             stBoard.Begin();
