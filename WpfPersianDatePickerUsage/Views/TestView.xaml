@@ -35,6 +35,7 @@
                 Grid.Row="1" 
                 Margin="5"
                 VerticalAlignment="Top"
+                TextBoxIsReadOnly="False"
                 />
     </Grid>
 </UserControl>

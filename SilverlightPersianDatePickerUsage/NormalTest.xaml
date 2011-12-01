@@ -12,7 +12,7 @@
                 x:Name="PDatePicker1"
                 Grid.Column="1" 
                 Grid.Row="2" 
-                Margin="5"
+                Margin="5" TextBoxIsReadOnly="False"
                 VerticalAlignment="Top"
                 />
 

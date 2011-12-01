@@ -13,12 +13,13 @@
         <ug:UniformGrid             
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Columns="2" Rows="3">
+            Columns="2" Rows="3">           
             <dp:PDatePicker 
                 x:Name="txt2"
                 TextBoxWidth="100"
                 Margin="5"
-                />
+                TextBoxIsReadOnly="False"
+                />            
             <dp:PCalendar x:Name="pcal1"
                       SelectedPersianDate="{Binding ElementName=txt2,Path=SelectedPersianDate, Mode=TwoWay}"
                       Margin="5"

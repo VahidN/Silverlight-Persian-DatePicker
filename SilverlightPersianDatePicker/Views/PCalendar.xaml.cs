@@ -13,7 +13,7 @@ namespace SilverlightPersianDatePicker.Views
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
     /// </author>    
-    public partial class PCalendar 
+    public partial class PCalendar
     {
         #region Fields (3)
 
@@ -51,6 +51,7 @@ namespace SilverlightPersianDatePicker.Views
             LayoutRoot.DataContext = _calendarViewModel;
             _calendarViewModel.StartAnimation += calendarViewModelStartAnimation;
             Loaded += pCalendarLoaded;
+            Unloaded += pCalendarUnloaded;
         }
 
         #endregion Constructors
@@ -68,7 +69,7 @@ namespace SilverlightPersianDatePicker.Views
             }
             set
             {
-                SetValue(SelectedDateProperty, value);                
+                SetValue(SelectedDateProperty, value);
             }
         }
 
@@ -80,8 +81,7 @@ namespace SilverlightPersianDatePicker.Views
             get { return (string)GetValue(SelectedPersianDateProperty); }
             set
             {
-                //todo: validation
-                SetValue(SelectedPersianDateProperty, value);                
+                SetValue(SelectedPersianDateProperty, value);
             }
         }
 
@@ -95,7 +95,7 @@ namespace SilverlightPersianDatePicker.Views
         {
             if (e.PropertyName == "CalendarGUIData")
             {
-                SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString("yyyy/MM/dd");               
+                SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString("yyyy/MM/dd");
                 SelectedPersianDate = _calendarViewModel.CalendarGUIData.SelectedPersianDate;
             }
         }
@@ -104,10 +104,15 @@ namespace SilverlightPersianDatePicker.Views
         {
             FlipAnim1.Begin();
         }
-
+        
         void pCalendarLoaded(object sender, RoutedEventArgs e)
         {
-            _calendarViewModel.PropertyChanged += calendarViewModelPropertyChanged;
+            _calendarViewModel.PropertyChanged += calendarViewModelPropertyChanged;            
+        }
+
+        void pCalendarUnloaded(object sender, RoutedEventArgs e)
+        {
+            _calendarViewModel.PropertyChanged -= calendarViewModelPropertyChanged;            
         }
 
         private static void selectedDateChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
@@ -132,7 +137,7 @@ namespace SilverlightPersianDatePicker.Views
 
             DateTime result;
             if (!DateTime.TryParse(eDate, out result)) return;
-            var gDate = result;            
+            var gDate = result;
 
             //تبديل به تاريخ فارسي
             int year, month, day;
@@ -150,13 +155,22 @@ namespace SilverlightPersianDatePicker.Views
         {
             if (e.NewValue == null) return;
             var pDate = e.NewValue.ToString();
-            if (string.IsNullOrWhiteSpace(pDate)) return;            
-            
+            if (string.IsNullOrWhiteSpace(pDate)) return;
+
+            if (pDate.Length < 10) return;
             var parts = PDateHelper.ExtractPersianDateParts(pDate);
             var year = parts.Item1;
             var month = parts.Item2;
             var day = parts.Item3;
             _calendarViewModel.SelectThisDay(year, month, day);
+            synchronize(year, month, day);
+        }
+
+        private void synchronize(int year, int month, int day)
+        {
+            int outYear, outMonth, outDay;
+            PDateHelper.HijriToGregorian(year, month, day, out outYear, out outMonth, out outDay);
+            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth.ToString("00"), outDay.ToString("00"));
         }
 
         #endregion Methods
