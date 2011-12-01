@@ -136,6 +136,11 @@
             Width of the TextBox.
             </summary>
         </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxIsReadOnlyProperty">
+            <summary>
+            IsReadOnly of the TextBox.
+            </summary>
+        </member>
         <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.#ctor">
             <summary>
             Initialization point.
@@ -164,6 +169,11 @@
         <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidth">
             <summary>
             Width of the TextBox.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxIsReadOnly">
+            <summary>
+            IsReadOnly of the TextBox.
             </summary>
         </member>
         <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel">

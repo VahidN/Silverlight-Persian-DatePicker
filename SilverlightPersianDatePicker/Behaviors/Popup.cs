@@ -96,15 +96,13 @@ namespace SilverlightPersianDatePicker.Behaviors
                 if (popupParent == null)
                 {
                     return;
-                }                
+                }
 
                 popupParent.RemoveHandler(UIElement.MouseLeftButtonDownEvent, (MouseButtonEventHandler)onMouseLeftButtonDown);
             }
 
             private void onMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
             {
-                // in lieu of DependencyObject.SetCurrentValue, this is the easiest way to enact a change on the value of the Popup's IsOpen
-                // property without overwriting any binding that may exist on it
                 var storyboard = new Storyboard { Duration = TimeSpan.Zero };
                 var objectAnimation = new ObjectAnimationUsingKeyFrames { Duration = TimeSpan.Zero };
                 objectAnimation.KeyFrames.Add(new DiscreteObjectKeyFrame { KeyTime = KeyTime.FromTimeSpan(TimeSpan.Zero), Value = false });
@@ -114,6 +112,5 @@ namespace SilverlightPersianDatePicker.Behaviors
                 storyboard.Begin();
             }
         }
-
     }
 }

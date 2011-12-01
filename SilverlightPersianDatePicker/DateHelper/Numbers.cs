@@ -1,4 +1,5 @@
-﻿
+﻿using System.Linq;
+
 namespace SilverlightPersianDatePicker.DateHelper
 {
     /// <summary>
@@ -17,18 +18,18 @@ namespace SilverlightPersianDatePicker.DateHelper
         /// <returns></returns>
         public static string ToPersianNumbers(this string data)
         {
-            if(string.IsNullOrWhiteSpace(data)) return data;
+            if (string.IsNullOrWhiteSpace(data)) return string.Empty;
             return
-               data.Replace("0","۰")
-                .Replace("1","۱" )
-                .Replace("2","۲" )
-                .Replace("3","۳" )
-                .Replace("4","۴" )
-                .Replace("5","۵")
-                .Replace("6","۶")
-                .Replace("7","۷")
-                .Replace("8","۸")
-                .Replace("9","۹");
+               data.Replace("0", "۰")
+                .Replace("1", "۱")
+                .Replace("2", "۲")
+                .Replace("3", "۳")
+                .Replace("4", "۴")
+                .Replace("5", "۵")
+                .Replace("6", "۶")
+                .Replace("7", "۷")
+                .Replace("8", "۸")
+                .Replace("9", "۹");
         }
 
         /// <summary>
@@ -38,7 +39,7 @@ namespace SilverlightPersianDatePicker.DateHelper
         /// <returns></returns>
         public static string ToEnglishNumbers(this string data)
         {
-            if(string.IsNullOrWhiteSpace(data)) return data;
+            if (string.IsNullOrWhiteSpace(data)) return string.Empty;
             return
                data.Replace("۰", "0")
                 .Replace("۱", "1")
@@ -50,6 +51,12 @@ namespace SilverlightPersianDatePicker.DateHelper
                 .Replace("۷", "7")
                 .Replace("۸", "8")
                 .Replace("۹", "9");
+        }
+
+        public static bool ContainsEnglishNumbers(this string data)
+        {
+            if (string.IsNullOrWhiteSpace(data)) return false;
+            return (from a in data.ToCharArray() where a >= '0' && a <= '9' select a).Count() > 0;
         }
     }
 }

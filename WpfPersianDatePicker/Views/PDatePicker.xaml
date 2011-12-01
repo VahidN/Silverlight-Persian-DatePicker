@@ -18,6 +18,7 @@
     </UserControl.Resources>
     <Grid Name="LayoutRoot"                                 
                 FlowDirection="RightToLeft"
+                LostFocus="dateTextBoxLostFocus"
                 Background="Transparent"
                 HorizontalAlignment="Stretch">
         <Grid.ColumnDefinitions>
@@ -32,13 +33,15 @@
                  Height="{Binding TextBoxHeight}"
                  FlowDirection="LeftToRight" 
                  VerticalAlignment="Center" 
-                 IsReadOnly="True"                 
+                 IsReadOnly="{Binding TextBoxIsReadOnly}"                 
                  Text="{Binding 
                                 ElementName=pcal1, 
                                 Path=SelectedPersianDate,
                                 NotifyOnValidationError=True, 
                                 ValidatesOnDataErrors=True, 
                                 ValidatesOnExceptions=True,
+                                UpdateSourceTrigger=PropertyChanged,
+                                Mode=TwoWay,
                                 Converter={StaticResource convToPersianNumberConverter}}"
                      HorizontalAlignment="Stretch" 
                      TextChanged="dateTextBoxTextChanged"                  

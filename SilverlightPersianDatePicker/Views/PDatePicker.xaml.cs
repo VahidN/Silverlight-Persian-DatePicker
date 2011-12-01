@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.ComponentModel;
+using System.Windows.Media;
 
 namespace SilverlightPersianDatePicker.Views
 {
@@ -14,7 +14,7 @@ namespace SilverlightPersianDatePicker.Views
     /// </author>    
     public partial class PDatePicker
     {
-        #region Fields (4)
+        #region Fields
 
         /// <summary>
         /// Selected Gregorian Date.
@@ -54,6 +54,16 @@ namespace SilverlightPersianDatePicker.Views
                 typeof(PDatePicker),
                 new PropertyMetadata(100));
 
+        /// <summary>
+        /// IsReadOnly of the TextBox.
+        /// </summary>
+        public static readonly DependencyProperty TextBoxIsReadOnlyProperty =
+                DependencyProperty.Register(
+                "TextBoxIsReadOnly",
+                typeof(bool),
+                typeof(PDatePicker),
+                new PropertyMetadata(true));
+
         #endregion Fields
 
         #region Constructors (1)
@@ -74,7 +84,7 @@ namespace SilverlightPersianDatePicker.Views
 
         #endregion Constructors
 
-        #region Properties (4)
+        #region Properties
 
         /// <summary>
         /// Selected Gregorian Date.
@@ -82,11 +92,11 @@ namespace SilverlightPersianDatePicker.Views
         public string SelectedDate
         {
             get { return (string)GetValue(SelectedDateProperty); }
-            set 
+            set
             {
                 pcal1.SelectedDate = value;
                 SetValue(SelectedDateProperty, value);
-                persianCalnedarPopup.IsOpen = false;                
+                persianCalnedarPopup.IsOpen = false;
             }
         }
 
@@ -98,10 +108,9 @@ namespace SilverlightPersianDatePicker.Views
             get { return (string)GetValue(SelectedPersianDateProperty); }
             set
             {
-                //todo: validation
                 pcal1.SelectedPersianDate = value;
                 SetValue(SelectedPersianDateProperty, value);
-                persianCalnedarPopup.IsOpen = false;                
+                persianCalnedarPopup.IsOpen = false;
             }
         }
 
@@ -121,6 +130,15 @@ namespace SilverlightPersianDatePicker.Views
         {
             get { return (int)GetValue(TextBoxWidthProperty); }
             set { SetValue(TextBoxWidthProperty, value); }
+        }
+
+        /// <summary>
+        /// IsReadOnly of the TextBox.
+        /// </summary>
+        public bool TextBoxIsReadOnly
+        {
+            get { return (bool)GetValue(TextBoxIsReadOnlyProperty); }
+            set { SetValue(TextBoxIsReadOnlyProperty, value); }
         }
 
         #endregion Properties
@@ -151,6 +169,21 @@ namespace SilverlightPersianDatePicker.Views
             if (persianCalnedarPopup.IsOpen) return;
             persianCalnedarPopup.IsOpen = true;
             pcal1.FlipAnim1.Begin();
+        }
+
+        private void dateTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!persianCalnedarPopup.IsOpen)
+                return; // Ignore
+
+            var focusElt = FocusManager.GetFocusedElement() as DependencyObject;
+            while (focusElt != null)
+            {
+                if (focusElt is PCalendar)
+                    return; // Still has the focus
+                focusElt = VisualTreeHelper.GetParent(focusElt);
+            }
+            persianCalnedarPopup.IsOpen = false; // Lost focus
         }
 
         #endregion Methods

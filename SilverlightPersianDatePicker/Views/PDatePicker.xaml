@@ -8,7 +8,7 @@
     xmlns:Views1="clr-namespace:SilverlightPersianDatePicker.Views" FlowDirection="RightToLeft"
     FontFamily="Tahoma" FontSize="11"               
     mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400">
-    <UserControl.Resources>        
+    <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/Styles.xaml" />
@@ -17,8 +17,9 @@
 
         <conv:ToPersianNumberConverter x:Key="convToPersianNumberConverter" />
     </UserControl.Resources>
-    <StackPanel Name="LayoutRoot"                                 
+    <StackPanel Name="LayoutRoot"                   
                 FlowDirection="RightToLeft"
+                LostFocus="dateTextBoxLostFocus"
                 Background="Transparent"
                 HorizontalAlignment="Stretch"
                 Orientation="Horizontal">
@@ -26,30 +27,32 @@
                  VerticalContentAlignment="Center"
                  Width="{Binding TextBoxWidth}"
                  Height="{Binding TextBoxHeight}"
+                 IsReadOnly="{Binding TextBoxIsReadOnly}"                 
                  FlowDirection="LeftToRight" 
-                 VerticalAlignment="Center" 
-                 IsReadOnly="True"                 
+                 VerticalAlignment="Center"                   
                  Text="{Binding 
                                 ElementName=pcal1, 
                                 Path=SelectedPersianDate,
                                 NotifyOnValidationError=True, 
                                 ValidatesOnDataErrors=True, 
-                                ValidatesOnExceptions=True,
+                                ValidatesOnExceptions=True,                                  
+                                Mode=TwoWay,
                                 Converter={StaticResource convToPersianNumberConverter}}"
                      HorizontalAlignment="Stretch" 
+                     b:BindingHelper.UpdateSourceOnChange="True"
                      TextChanged="dateTextBoxTextChanged"                  
                      >
         </TextBox>
-        <HyperlinkButton  Name="openCalendarButton"                  
-                 Width="24" 
-                 Click="openCalendarButtonClick" 
+        <HyperlinkButton Name="openCalendarButton"                  
+                Width="24"                
+                Click="openCalendarButtonClick" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center">
             <HyperlinkButton.Content>
-                <StackPanel>
+                <StackPanel Name="popupStackPanel">
                     <Image Source="Images/date.png" VerticalAlignment="Center" />
-                    <Popup Name="persianCalnedarPopup"                                        
-                       b:Popup.StaysOpen="false">
+                    <Popup Name="persianCalnedarPopup"                                                           
+                           b:Popup.StaysOpen="False">
                         <Border Background="White" 
                                 BorderThickness="1" 
                                 BorderBrush="Gray" 
@@ -81,6 +84,6 @@
                                FontSize="11" Margin="2" />
                 </StackPanel>
             </ToolTipService.ToolTip>
-        </HyperlinkButton>        
+        </HyperlinkButton>
     </StackPanel>
 </UserControl>

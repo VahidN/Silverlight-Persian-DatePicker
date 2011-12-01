@@ -14,7 +14,7 @@ namespace WpfPersianDatePicker.Views
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
     /// </author>    
-    public partial class PCalendar 
+    public partial class PCalendar
     {
         #region Fields (3)
 
@@ -52,6 +52,7 @@ namespace WpfPersianDatePicker.Views
             LayoutRoot.DataContext = _calendarViewModel;
             _calendarViewModel.StartAnimation += calendarViewModelStartAnimation;
             Loaded += pCalendarLoaded;
+            Unloaded += pCalendarUnloaded;
         }
 
         #endregion Constructors
@@ -68,7 +69,7 @@ namespace WpfPersianDatePicker.Views
                 return (string)GetValue(SelectedDateProperty);
             }
             set
-            {
+            {                
                 SetValue(SelectedDateProperty, value);
             }
         }
@@ -80,8 +81,7 @@ namespace WpfPersianDatePicker.Views
         {
             get { return (string)GetValue(SelectedPersianDateProperty); }
             set
-            {
-                //todo: validation
+            {                
                 SetValue(SelectedPersianDateProperty, value);
             }
         }
@@ -113,6 +113,11 @@ namespace WpfPersianDatePicker.Views
             _calendarViewModel.PropertyChanged += calendarViewModelPropertyChanged;
         }
 
+        void pCalendarUnloaded(object sender, RoutedEventArgs e)
+        {
+            _calendarViewModel.PropertyChanged -= calendarViewModelPropertyChanged;
+        }
+
         private static void selectedDateChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
         {
             var pCalendar = o as PCalendar;
@@ -128,7 +133,7 @@ namespace WpfPersianDatePicker.Views
         }
 
         void setSelectedGDate(DependencyPropertyChangedEventArgs e)
-        {
+        {            
             if (e.NewValue == null) return;
             var eDate = e.NewValue.ToString();
             if (string.IsNullOrWhiteSpace(eDate)) return;
@@ -148,18 +153,27 @@ namespace WpfPersianDatePicker.Views
                 SelectedPersianDate = string.Format("{0}/{1}/{2}", year, month.ToString("00"), day.ToString("00"));
             }
         }
-
+                
         void setSelectedPDate(DependencyPropertyChangedEventArgs e)
-        {
+        {            
             if (e.NewValue == null) return;
             var pDate = e.NewValue.ToString();
             if (string.IsNullOrWhiteSpace(pDate)) return;
+            if (pDate.Length < 10) return;
 
             var parts = PDateHelper.ExtractPersianDateParts(pDate);
             var year = parts.Item1;
             var month = parts.Item2;
             var day = parts.Item3;
             _calendarViewModel.SelectThisDay(year, month, day);
+            synchronize(year, month, day);
+        }
+
+        private void synchronize(int year, int month, int day)
+        {
+            int outYear, outMonth, outDay;
+            PDateHelper.HijriToGregorian(year, month, day, out outYear, out outMonth, out outDay);
+            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth.ToString("00"), outDay.ToString("00"));
         }
 
         #endregion Methods

@@ -62,6 +62,7 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\BindingHelper.cs" />
     <Compile Include="Behaviors\Popup.cs" />
     <Compile Include="Brushes\CustomBrushes.cs" />
     <Compile Include="Components\UniformGrid.cs" />

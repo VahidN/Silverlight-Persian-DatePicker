@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using System.Windows.Media;
 
 namespace WpfPersianDatePicker.Views
 {
@@ -14,7 +15,7 @@ namespace WpfPersianDatePicker.Views
     /// </author>    
     public partial class PDatePicker
     {
-        #region Fields (4)
+        #region Fields
 
         /// <summary>
         /// Selected Gregorian Date.
@@ -51,6 +52,16 @@ namespace WpfPersianDatePicker.Views
                 typeof(PDatePicker),
                 new PropertyMetadata(100));
 
+        /// <summary>
+        /// IsReadOnly of the TextBox.
+        /// </summary>
+        public static readonly DependencyProperty TextBoxIsReadOnlyProperty =
+                DependencyProperty.Register(
+                "TextBoxIsReadOnly",
+                typeof(bool),
+                typeof(PDatePicker),
+                new PropertyMetadata(true));
+
         #endregion Fields
 
         #region Constructors (1)
@@ -71,7 +82,7 @@ namespace WpfPersianDatePicker.Views
 
         #endregion Constructors
 
-        #region Properties (4)
+        #region Properties
 
         /// <summary>
         /// Selected Gregorian Date.
@@ -95,7 +106,6 @@ namespace WpfPersianDatePicker.Views
             get { return (string)GetValue(SelectedPersianDateProperty); }
             set
             {
-                //todo: validation
                 pcal1.SelectedPersianDate = value;
                 SetValue(SelectedPersianDateProperty, value);
                 persianCalnedarPopup.IsOpen = false;
@@ -120,6 +130,15 @@ namespace WpfPersianDatePicker.Views
             set { SetValue(TextBoxWidthProperty, value); }
         }
 
+        /// <summary>
+        /// IsReadOnly of the TextBox.
+        /// </summary>
+        public bool TextBoxIsReadOnly
+        {
+            get { return (bool)GetValue(TextBoxIsReadOnlyProperty); }
+            set { SetValue(TextBoxIsReadOnlyProperty, value); }
+        }
+
         #endregion Properties
 
         #region Methods (5)
@@ -127,7 +146,7 @@ namespace WpfPersianDatePicker.Views
         // Private Methods (5) 
 
         private void beginAnimation()
-        {            
+        {
             var stBoard = pcal1.Resources["FlipAnim1"] as Storyboard;
             if (stBoard == null) return;
             stBoard.Begin();
@@ -155,6 +174,21 @@ namespace WpfPersianDatePicker.Views
             if (persianCalnedarPopup.IsOpen) return;
             persianCalnedarPopup.IsOpen = true;
             beginAnimation();
+        }
+
+        private void dateTextBoxLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!persianCalnedarPopup.IsOpen)
+                return; // Ignore
+
+            var focusElt = FocusManager.GetFocusedElement(LayoutRoot) as DependencyObject;
+            while (focusElt != null)
+            {
+                if (focusElt is PCalendar)
+                    return; // Still has the focus
+                focusElt = VisualTreeHelper.GetParent(focusElt);
+            }
+            persianCalnedarPopup.IsOpen = false; // Lost focus
         }
 
         #endregion Methods

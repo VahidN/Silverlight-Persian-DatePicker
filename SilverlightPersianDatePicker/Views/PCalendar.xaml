@@ -61,7 +61,7 @@
                     <ColumnDefinition Width="28" />
                 </Grid.ColumnDefinitions>
 
-                <HyperlinkButton 
+                <HyperlinkButton                                  
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     HorizontalContentAlignment="Center"
@@ -81,7 +81,7 @@
                 </HyperlinkButton>
 
                 <HyperlinkButton 
-                    Grid.Column="1"
+                    Grid.Column="1"                    
                     Foreground="{StaticResource HeaderHyperlinkButtonForeground}"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
@@ -121,7 +121,7 @@
 
         <ItemsControl ItemsSource="{Binding DaysInfo}"
                       VerticalAlignment="Top"     
-                      HorizontalAlignment="Center"
+                      HorizontalAlignment="Center"                      
                       Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
             <ItemsControl.Projection>
                 <PlaneProjection x:Name="ItemsControlProjection1"/>
