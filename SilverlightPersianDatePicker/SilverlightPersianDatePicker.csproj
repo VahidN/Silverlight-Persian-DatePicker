@@ -73,6 +73,7 @@
     <Compile Include="DateHelper\Numbers.cs" />
     <Compile Include="DateHelper\PCal.cs" />
     <Compile Include="DateHelper\PDateHelper.cs" />
+    <Compile Include="DateHelper\ResilientDate.cs" />
     <Compile Include="Models\CalendarGUI.cs" />
     <Compile Include="Models\DayInfo.cs" />
     <Compile Include="MVVMHelper\DelegateCommand.cs" />

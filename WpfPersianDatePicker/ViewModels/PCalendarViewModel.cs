@@ -445,7 +445,7 @@ namespace WpfPersianDatePicker.ViewModels
         {
             resetGui();
 
-            var pDate = string.Format("{0}/{1}/{2}", year, month.ToString("00"), day.ToString("00"));
+            var pDate = string.Format("{0}/{1}/{2}", year, month, day);
             CalendarGUIData.SelectedPersianDate = pDate;
 
             int outYear, outMonth, outDay;

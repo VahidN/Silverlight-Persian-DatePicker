@@ -104,15 +104,15 @@ namespace SilverlightPersianDatePicker.Views
         {
             FlipAnim1.Begin();
         }
-        
+
         void pCalendarLoaded(object sender, RoutedEventArgs e)
         {
-            _calendarViewModel.PropertyChanged += calendarViewModelPropertyChanged;            
+            _calendarViewModel.PropertyChanged += calendarViewModelPropertyChanged;
         }
 
         void pCalendarUnloaded(object sender, RoutedEventArgs e)
         {
-            _calendarViewModel.PropertyChanged -= calendarViewModelPropertyChanged;            
+            _calendarViewModel.PropertyChanged -= calendarViewModelPropertyChanged;
         }
 
         private static void selectedDateChanged(DependencyObject o, DependencyPropertyChangedEventArgs e)
@@ -147,7 +147,7 @@ namespace SilverlightPersianDatePicker.Views
                 gDate.Day,
                 out year, out month, out day))
             {
-                SelectedPersianDate = string.Format("{0}/{1}/{2}", year, month.ToString("00"), day.ToString("00"));
+                SelectedPersianDate = string.Format("{0}/{1}/{2}", year, month, day);
             }
         }
 
@@ -155,9 +155,9 @@ namespace SilverlightPersianDatePicker.Views
         {
             if (e.NewValue == null) return;
             var pDate = e.NewValue.ToString();
+            pDate = pDate.ToResilientPersianDate();
             if (string.IsNullOrWhiteSpace(pDate)) return;
 
-            if (pDate.Length < 10) return;
             var parts = PDateHelper.ExtractPersianDateParts(pDate);
             var year = parts.Item1;
             var month = parts.Item2;
@@ -170,7 +170,7 @@ namespace SilverlightPersianDatePicker.Views
         {
             int outYear, outMonth, outDay;
             PDateHelper.HijriToGregorian(year, month, day, out outYear, out outMonth, out outDay);
-            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth.ToString("00"), outDay.ToString("00"));
+            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth, outDay);
         }
 
         #endregion Methods
