@@ -533,6 +533,7 @@
               <email>vahid_nasiri@yahoo.com</email>
             </author>    
         </member>
+        <!-- Badly formed XML comment ignored for member "M:WpfPersianDatePicker.DateHelper.ResilientDate.ToResilientPersianDate(System.String)" -->
         <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
             <summary>
             GeneratedInternalTypeHelper

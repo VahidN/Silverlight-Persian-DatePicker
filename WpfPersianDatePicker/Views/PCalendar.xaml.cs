@@ -69,7 +69,7 @@ namespace WpfPersianDatePicker.Views
                 return (string)GetValue(SelectedDateProperty);
             }
             set
-            {                
+            {
                 SetValue(SelectedDateProperty, value);
             }
         }
@@ -81,7 +81,7 @@ namespace WpfPersianDatePicker.Views
         {
             get { return (string)GetValue(SelectedPersianDateProperty); }
             set
-            {                
+            {
                 SetValue(SelectedPersianDateProperty, value);
             }
         }
@@ -133,7 +133,7 @@ namespace WpfPersianDatePicker.Views
         }
 
         void setSelectedGDate(DependencyPropertyChangedEventArgs e)
-        {            
+        {
             if (e.NewValue == null) return;
             var eDate = e.NewValue.ToString();
             if (string.IsNullOrWhiteSpace(eDate)) return;
@@ -150,16 +150,16 @@ namespace WpfPersianDatePicker.Views
                 gDate.Day,
                 out year, out month, out day))
             {
-                SelectedPersianDate = string.Format("{0}/{1}/{2}", year, month.ToString("00"), day.ToString("00"));
+                SelectedPersianDate = string.Format("{0}/{1}/{2}", year, month, day);
             }
         }
-                
+
         void setSelectedPDate(DependencyPropertyChangedEventArgs e)
-        {            
+        {
             if (e.NewValue == null) return;
             var pDate = e.NewValue.ToString();
+            pDate = pDate.ToResilientPersianDate();
             if (string.IsNullOrWhiteSpace(pDate)) return;
-            if (pDate.Length < 10) return;
 
             var parts = PDateHelper.ExtractPersianDateParts(pDate);
             var year = parts.Item1;
@@ -173,7 +173,7 @@ namespace WpfPersianDatePicker.Views
         {
             int outYear, outMonth, outDay;
             PDateHelper.HijriToGregorian(year, month, day, out outYear, out outMonth, out outDay);
-            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth.ToString("00"), outDay.ToString("00"));
+            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth, outDay);
         }
 
         #endregion Methods
