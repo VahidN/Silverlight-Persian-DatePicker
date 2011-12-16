@@ -11,37 +11,31 @@ namespace WpfPersianDatePicker.MVVMHelper
 	public class DelegateCommand<T> : ICommand
 	{
 		readonly Func<T, bool> _canExecute;
-		readonly Action<T> _executeAction;
-		bool _canExecuteCache;
+        readonly Action<T> _executeAction;
 
-		public DelegateCommand(Action<T> executeAction,
-			Func<T, bool> canExecute)
-		{
-			_executeAction = executeAction;
-			_canExecute = canExecute;
-		}
+        public DelegateCommand(Action<T> executeAction, Func<T, bool> canExecute = null)
+        {
+            if (executeAction == null)
+                throw new ArgumentNullException("executeAction");
 
-		public bool CanExecute(object parameter)
-		{
-			var temp = _canExecute((T)parameter);
+            _executeAction = executeAction;
+            _canExecute = canExecute;
+        }
 
-			if (_canExecuteCache != temp)
-			{
-				_canExecuteCache = temp;
+        public event EventHandler CanExecuteChanged
+        {
+            add { if (_canExecute != null) CommandManager.RequerySuggested += value; }
+            remove { if (_canExecute != null) CommandManager.RequerySuggested -= value; }
+        }
 
-				if (CanExecuteChanged != null)
-				{
-					CanExecuteChanged(this, new EventArgs());
-				}
-			}
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null ? true : _canExecute((T)parameter);
+        }
 
-			return _canExecuteCache;
-		}
-
-		public event EventHandler CanExecuteChanged;
-		public void Execute(object parameter)
-		{
-			_executeAction((T)parameter);
-		}
+        public void Execute(object parameter)
+        {
+            _executeAction((T)parameter);
+        }
 	}
 }
