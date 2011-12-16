@@ -1,0 +1,37 @@
+﻿<navigation:Page x:Class="SilverlightPersianDatePickerUsage.MainMenu" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d" FlowDirection="RightToLeft" FontFamily="Tahoma" FontSize="11"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:Navigation="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation" 
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="MainMenu Page">
+    <navigation:Page.Resources>
+        <Navigation:UriMapper x:Key="uriMapper1">
+            <Navigation:UriMapping Uri="/MainPage" MappedUri="/MainPage.xaml" />
+            <Navigation:UriMapping Uri="/TestView" MappedUri="/TestView.xaml" />
+            <Navigation:UriMapping Uri="/TestView2" MappedUri="/TestView2.xaml" />
+            <Navigation:UriMapping Uri="/NormalTest" MappedUri="/NormalTest.xaml" />
+        </Navigation:UriMapper>
+    </navigation:Page.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127" />
+            <ColumnDefinition Width="513*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="AliceBlue">
+            <HyperlinkButton Content="مثال يك" Margin="5" NavigateUri="/MainPage" />
+            <HyperlinkButton Content="مثال دو" Margin="5" NavigateUri="/TestView"/>
+            <HyperlinkButton Content="مثال سه" Margin="5" NavigateUri="/TestView2"/>
+            <HyperlinkButton Content="مثال چهار" Margin="5" NavigateUri="/NormalTest"/>
+        </StackPanel>
+        <navigation:Frame Grid.Column="1"                           
+                          HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Stretch"
+                          UriMapper="{StaticResource uriMapper1}"
+                          Margin="5" 
+                          Name="frame1" NavigationFailed="frame1NavigationFailed" />
+    </Grid>
+</navigation:Page>

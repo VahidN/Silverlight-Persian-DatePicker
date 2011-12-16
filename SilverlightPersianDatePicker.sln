@@ -11,6 +11,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfPersianDatePicker", "Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfPersianDatePickerUsage", "WpfPersianDatePickerUsage\WpfPersianDatePickerUsage.csproj", "{1DC4C26A-C94C-40D7-BADE-266220835E18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight5PersianDatePicker", "Silverlight5PersianDatePicker\Silverlight5PersianDatePicker.csproj", "{084E0E04-D466-4175-8989-D794BF19312E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight5PersianDatePicker.Web", "Silverlight5PersianDatePicker.Web\Silverlight5PersianDatePicker.Web.csproj", "{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SL4", "SL4", "{0F6DF9EE-48AB-4425-B554-10B0BA01D457}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SL5", "SL5", "{A5B13AD9-B8E7-491A-AB32-284F286705F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{DCF57090-F47C-4A2B-829D-CD66729C2F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight5PersianDatePickerUsage", "Silverlight5PersianDatePickerUsage\Silverlight5PersianDatePickerUsage.csproj", "{46B99EB8-27DE-431F-9C36-A182ECC9138D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,9 +83,49 @@ Global
 		{1DC4C26A-C94C-40D7-BADE-266220835E18}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1DC4C26A-C94C-40D7-BADE-266220835E18}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1DC4C26A-C94C-40D7-BADE-266220835E18}.Release|x86.ActiveCfg = Release|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{084E0E04-D466-4175-8989-D794BF19312E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6}.Release|x86.ActiveCfg = Release|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3568ADD5-1E5C-45B7-85AD-82ACA54F6E38} = {0F6DF9EE-48AB-4425-B554-10B0BA01D457}
+		{82CF3EF8-59BF-44F6-9B3F-291C269B481E} = {0F6DF9EE-48AB-4425-B554-10B0BA01D457}
+		{FE7CD2FC-9836-4183-AE67-5224F88650B8} = {0F6DF9EE-48AB-4425-B554-10B0BA01D457}
+		{1DC4C26A-C94C-40D7-BADE-266220835E18} = {DCF57090-F47C-4A2B-829D-CD66729C2F65}
+		{6FF02AF8-F08B-45C1-A03A-DF287E90CDD0} = {DCF57090-F47C-4A2B-829D-CD66729C2F65}
+		{F4A01F9E-8D88-4FC0-8607-4AE238E167C6} = {A5B13AD9-B8E7-491A-AB32-284F286705F2}
+		{084E0E04-D466-4175-8989-D794BF19312E} = {A5B13AD9-B8E7-491A-AB32-284F286705F2}
+		{46B99EB8-27DE-431F-9C36-A182ECC9138D} = {A5B13AD9-B8E7-491A-AB32-284F286705F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

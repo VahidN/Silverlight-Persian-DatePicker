@@ -311,6 +311,7 @@
             DaysOfWeek in the Persian calendar.
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:SilverlightPersianDatePicker.DateHelper.ResilientDate.ToResilientPersianDate(System.String)" -->
         <member name="T:SilverlightPersianDatePicker.Converters.ToPersianNumberConverter">
             <summary>
             IValueConverter class for converting English numbers to Persian numbers in reports.
@@ -813,6 +814,5 @@
               <email>vahid_nasiri@yahoo.com</email>
             </author>    
         </member>
-        <!-- Badly formed XML comment ignored for member "M:SilverlightPersianDatePicker.DateHelper.ResilientDate.ToResilientPersianDate(System.String)" -->
     </members>
 </doc>

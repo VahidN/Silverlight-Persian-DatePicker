@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{084E0E04-D466-4175-8989-D794BF19312E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Silverlight5PersianDatePicker</RootNamespace>
+    <AssemblyName>Silverlight5PersianDatePicker</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Bin\Release\Silverlight5PersianDatePicker.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SilverlightPersianDatePicker.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SilverlightPersianDatePicker\Behaviors\Popup.cs">
+      <Link>Behaviors\Popup.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\Brushes\CustomBrushes.cs">
+      <Link>Brushes\CustomBrushes.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\Components\UniformGrid.cs">
+      <Link>Components\UniformGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\Converters\ToPersianDateConverter.cs">
+      <Link>Converters\ToPersianDateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\Converters\ToPersianNumberConverter.cs">
+      <Link>Converters\ToPersianNumberConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\DateHelper\CalendarMode.cs">
+      <Link>DateHelper\CalendarMode.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\DateHelper\Names.cs">
+      <Link>DateHelper\Names.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\DateHelper\Numbers.cs">
+      <Link>DateHelper\Numbers.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\DateHelper\PDateHelper.cs">
+      <Link>DateHelper\PDateHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\DateHelper\ResilientDate.cs">
+      <Link>DateHelper\ResilientDate.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\Models\CalendarGUI.cs">
+      <Link>Models\CalendarGUI.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\Models\DayInfo.cs">
+      <Link>Models\DayInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\MVVMHelper\DelegateCommand.cs">
+      <Link>MVVMHelper\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\SilverlightPersianDatePicker\ViewModels\PCalendarViewModel.cs">
+      <Link>ViewModels\PCalendarViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PCalendar.xaml.cs">
+      <DependentUpon>PCalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PDatePicker.xaml.cs">
+      <DependentUpon>PDatePicker.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SilverlightPersianDatePicker.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\PCalendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PDatePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Themes\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
