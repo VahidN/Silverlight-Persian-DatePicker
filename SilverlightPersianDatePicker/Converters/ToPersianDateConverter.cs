@@ -26,7 +26,7 @@ namespace SilverlightPersianDatePicker.Converters
                 date.Day,
                 out year, out month, out day))
             {
-                return string.Format("{0}/{1}/{2}", year, month.ToString("00"), day.ToString("00"));
+                return string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", year, month.ToString("00", CultureInfo.InvariantCulture), day.ToString("00", CultureInfo.InvariantCulture));
             }
             return null;
         }

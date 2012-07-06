@@ -10,7 +10,7 @@ namespace SilverlightPersianDatePicker.Brushes
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
     /// </author>    
-    public class CustomBrushes
+    public static class CustomBrushes
     {
         #region Methods (11)
 
