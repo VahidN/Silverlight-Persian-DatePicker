@@ -8,7 +8,7 @@ namespace SilverlightPersianDatePicker.DateHelper
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
     /// </author>    
-    public class Names
+    public static class Names
     {
         /// <summary>
         /// MonthNames in the Persian calendar.

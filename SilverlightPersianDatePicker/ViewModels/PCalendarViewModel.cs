@@ -8,6 +8,7 @@ using SilverlightPersianDatePicker.Brushes;
 using SilverlightPersianDatePicker.DateHelper;
 using SilverlightPersianDatePicker.Models;
 using SilverlightPersianDatePicker.MVVMHelper;
+using System.Globalization;
 
 namespace SilverlightPersianDatePicker.ViewModels
 {
@@ -190,13 +191,13 @@ namespace SilverlightPersianDatePicker.ViewModels
                 case CalendarMode.Year:
                     {
                         _currentYear++;
-                        CalendarGUIData.HeaderText = _currentYear.ToString();
+                        CalendarGUIData.HeaderText = _currentYear.ToString(CultureInfo.InvariantCulture);
                     }
                     break;
                 case CalendarMode.Decade:
                     {
                         _currentYear += 12;
-                        CalendarGUIData.HeaderText = _currentYear.ToString();
+                        CalendarGUIData.HeaderText = _currentYear.ToString(CultureInfo.InvariantCulture);
                         showDecade();
                     }
                     break;
@@ -223,13 +224,13 @@ namespace SilverlightPersianDatePicker.ViewModels
                 case CalendarMode.Year:
                     {
                         _currentYear--;
-                        CalendarGUIData.HeaderText = _currentYear.ToString();
+                        CalendarGUIData.HeaderText = _currentYear.ToString(CultureInfo.InvariantCulture);
                     }
                     break;
                 case CalendarMode.Decade:
                     {
                         _currentYear -= 12;
-                        CalendarGUIData.HeaderText = _currentYear.ToString();
+                        CalendarGUIData.HeaderText = _currentYear.ToString(CultureInfo.InvariantCulture);
                         showDecade();
                     }
                     break;
@@ -247,7 +248,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             {
                 case CalendarMode.Month:
                     {
-                        var dd = int.Parse(day);
+                        var dd = int.Parse(day, CultureInfo.InvariantCulture);
                         var month = _currentMonth + 1;
                         var year = _currentYear;
 
@@ -271,7 +272,7 @@ namespace SilverlightPersianDatePicker.ViewModels
                     break;
                 case CalendarMode.Decade:
                     {
-                        _currentYear = int.Parse(day);
+                        _currentYear = int.Parse(day, CultureInfo.InvariantCulture);
                         showYear();
                     }
                     break;
@@ -290,7 +291,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             calendarMode = CalendarMode.Month;
             _currentYear = year;
             _currentMonth = monthIndex - 1;
-            CalendarGUIData.HeaderText = string.Format("{0} {1}", Names.MonthNames[monthIndex - 1], year);
+            CalendarGUIData.HeaderText = string.Format(CultureInfo.InvariantCulture,"{0} {1}", Names.MonthNames[monthIndex - 1], year);
 
             for (var i = 0; i <= 41; i++)
             {
@@ -325,7 +326,7 @@ namespace SilverlightPersianDatePicker.ViewModels
 
             for (var i = 0; i <= 41; i++)
             {
-                if (DaysInfo[i + 7].Number != day.ToString())
+                if (DaysInfo[i + 7].Number != day.ToString(CultureInfo.InvariantCulture))
                 {
                     continue;
                 }
@@ -349,7 +350,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             //highlight today!
             for (var i = 0; i <= 41; i++)
             {
-                if (DaysInfo[i + 7].Number != tOutDay.ToString()) continue;
+                if (DaysInfo[i + 7].Number != tOutDay.ToString(CultureInfo.InvariantCulture)) continue;
                 DaysInfo[i + 7].FontWeight = FontWeights.Bold;
                 DaysInfo[i + 7].BackgroundBrush = CustomBrushes.TodayBackground();
                 DaysInfo[i + 7].BorderBrush = CustomBrushes.TodayBorderBrush();
@@ -390,7 +391,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             for (i = startDay; i <= 6; i++)
             {
                 var curDay = i - startDay + 1;
-                DaysInfo[i + 7].Number = curDay.ToString();
+                DaysInfo[i + 7].Number = curDay.ToString(CultureInfo.InvariantCulture);
                 DaysInfo[i + 7].BackgroundBrush = CustomBrushes.BorderBlueBackground();
                 DaysInfo[i + 7].BorderBrush = CustomBrushes.CellsBorederBrush();
                 DaysInfo[i + 7].Foreground = CustomBrushes.CellsForeground();
@@ -400,7 +401,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             for (j = 6 - startDay + 1; j <= nDays - 1; j++)
             {
                 var curDay = j + 1;
-                DaysInfo[k + 7].Number = curDay.ToString();
+                DaysInfo[k + 7].Number = curDay.ToString(CultureInfo.InvariantCulture);
                 DaysInfo[k + 7].BackgroundBrush = CustomBrushes.BorderBlueBackground();
                 DaysInfo[k + 7].BorderBrush = CustomBrushes.CellsBorederBrush();
                 DaysInfo[k + 7].Foreground = CustomBrushes.CellsForeground();
@@ -432,7 +433,7 @@ namespace SilverlightPersianDatePicker.ViewModels
                 DateTime.Now.Day,
                 out outYear, out outMonth, out outDay);
 
-            CalendarGUIData.Today = string.Format("{0}/{1}/{2}", outYear, outMonth.ToString("00"), outDay.ToString("00"));
+            CalendarGUIData.Today = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", outYear, outMonth.ToString("00", CultureInfo.InvariantCulture), outDay.ToString("00", CultureInfo.InvariantCulture));
             setTodayData(outYear, outMonth, outDay);
 
             if (_currentYear == 0)
@@ -445,7 +446,7 @@ namespace SilverlightPersianDatePicker.ViewModels
         {
             resetGui();
 
-            var pDate = string.Format("{0}/{1}/{2}", year, month, day);
+            var pDate = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}", year, month, day);
             CalendarGUIData.SelectedPersianDate = pDate;
 
             int outYear, outMonth, outDay;
@@ -482,7 +483,7 @@ namespace SilverlightPersianDatePicker.ViewModels
             {
                 DaysInfo.Add(new DayInfo
                 {
-                    Number = (_currentYear - i).ToString(),
+                    Number = (_currentYear - i).ToString(CultureInfo.InvariantCulture),
                     FontWeight = FontWeights.Bold,
                     BackgroundBrush = CustomBrushes.HighlightBackground(),
                     BorderBrush = CustomBrushes.HightlightBorderBrush(),
@@ -526,7 +527,7 @@ namespace SilverlightPersianDatePicker.ViewModels
 
         private void showYear()
         {
-            CalendarGUIData.HeaderText = _currentYear.ToString();
+            CalendarGUIData.HeaderText = _currentYear.ToString(CultureInfo.InvariantCulture);
             DaysInfo.Clear();
 
             CalendarGUIData.UniformGridColumns = 3;

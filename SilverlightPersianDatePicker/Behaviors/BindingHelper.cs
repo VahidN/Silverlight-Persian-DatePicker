@@ -2,10 +2,9 @@
 using System.Windows.Controls;
 using SilverlightPersianDatePicker.DateHelper;
 
-
 namespace SilverlightPersianDatePicker.Behaviors
 {
-    public class BindingHelper
+    public static class BindingHelper
     {
         public static readonly DependencyProperty
                         UpdateSourceOnChangeProperty =

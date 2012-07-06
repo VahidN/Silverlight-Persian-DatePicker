@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Windows;
 using SilverlightPersianDatePicker.DateHelper;
 using SilverlightPersianDatePicker.ViewModels;
+using System.Globalization;
 
 namespace SilverlightPersianDatePicker.Views
 {
@@ -95,7 +96,7 @@ namespace SilverlightPersianDatePicker.Views
         {
             if (e.PropertyName == "CalendarGUIData")
             {
-                SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString("yyyy/MM/dd");
+                SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
                 SelectedPersianDate = _calendarViewModel.CalendarGUIData.SelectedPersianDate;
             }
         }
@@ -147,7 +148,7 @@ namespace SilverlightPersianDatePicker.Views
                 gDate.Day,
                 out year, out month, out day))
             {
-                SelectedPersianDate = string.Format("{0}/{1}/{2}", year, month, day);
+                SelectedPersianDate = string.Format(CultureInfo.InvariantCulture,"{0}/{1}/{2}", year, month, day);
             }
         }
 
@@ -170,7 +171,7 @@ namespace SilverlightPersianDatePicker.Views
         {
             int outYear, outMonth, outDay;
             PDateHelper.HijriToGregorian(year, month, day, out outYear, out outMonth, out outDay);
-            SelectedDate = string.Format("{0}/{1}/{2}", outYear, outMonth, outDay);
+            SelectedDate = string.Format(CultureInfo.InvariantCulture,"{0}/{1}/{2}", outYear, outMonth, outDay);
         }
 
         #endregion Methods

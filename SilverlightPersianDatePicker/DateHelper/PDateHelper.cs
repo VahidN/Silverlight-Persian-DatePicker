@@ -10,7 +10,7 @@ namespace SilverlightPersianDatePicker.DateHelper
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
     /// </author>    
-    public class PDateHelper
+    public static class PDateHelper
     {
         #region Methods (5)
 
@@ -168,36 +168,36 @@ namespace SilverlightPersianDatePicker.DateHelper
         {
             if (string.IsNullOrWhiteSpace(inData))
             {
-                throw new Exception("لطفا تاريخي را وارد نمائيد.");
+                throw new InvalidOperationException("لطفا تاريخي را وارد نمائيد.");
             }
 
             var parts = inData.Split('/');
             if (parts.Length != 3)
             {
-                throw new Exception("تاريخ شمسي وارد شده معتبر نيست.");
+                throw new InvalidOperationException("تاريخ شمسي وارد شده معتبر نيست.");
             }
 
             int year;
             if (!int.TryParse(parts[0], out year))
             {
-                throw new Exception("سال شمسي وارد شده معتبر نيست.");
+                throw new InvalidOperationException("سال شمسي وارد شده معتبر نيست.");
             }
 
             int month;
             if (!int.TryParse(parts[1], out month))
             {
-                throw new Exception("ماه شمسي وارد شده معتبر نيست.");
+                throw new InvalidOperationException("ماه شمسي وارد شده معتبر نيست.");
             }
 
             int day;
             if (!int.TryParse(parts[2], out day))
             {
-                throw new Exception("روز شمسي وارد شده معتبر نيست.");
+                throw new InvalidOperationException("روز شمسي وارد شده معتبر نيست.");
             }
 
             if (!IsValid(year, month, day))
             {
-                throw new Exception("تاريخ شمسي وارد شده معتبر نيست.");
+                throw new InvalidOperationException("تاريخ شمسي وارد شده معتبر نيست.");
             }
 
             return new Tuple<int, int, int>(year, month, day);
