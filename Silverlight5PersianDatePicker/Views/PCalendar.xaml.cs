@@ -133,7 +133,11 @@ namespace SilverlightPersianDatePicker.Views
         {
             if (e.NewValue == null) return;
             var eDate = e.NewValue.ToString();
-            if (string.IsNullOrWhiteSpace(eDate)) return;
+            if (string.IsNullOrWhiteSpace(eDate))
+            {
+                _calendarViewModel.ResetCalendar();
+                return;
+            }
 
             DateTime result;
             if (!DateTime.TryParse(eDate, out result)) return;
@@ -156,7 +160,11 @@ namespace SilverlightPersianDatePicker.Views
             if (e.NewValue == null) return;
             var pDate = e.NewValue.ToString();
             pDate = pDate.ToResilientPersianDate();
-            if (string.IsNullOrWhiteSpace(pDate)) return;
+            if (string.IsNullOrWhiteSpace(pDate))
+            {
+                _calendarViewModel.ResetCalendar();
+                return;
+            }
 
             var parts = PDateHelper.ExtractPersianDateParts(pDate);
             var year = parts.Item1;

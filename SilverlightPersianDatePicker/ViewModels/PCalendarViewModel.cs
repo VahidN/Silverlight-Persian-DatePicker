@@ -409,6 +409,13 @@ namespace SilverlightPersianDatePicker.ViewModels
             }
         }
 
+        public void ResetCalendar()
+        {
+            reset();
+            resetTheCache();            
+            showTodayClick(string.Empty);
+        }
+
         private void reset()
         {
             _lastSelectedIdx = -1;
