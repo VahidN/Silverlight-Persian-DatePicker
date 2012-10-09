@@ -178,8 +178,11 @@ namespace WpfPersianDatePicker.Views
 
         private void dateTextBoxLostFocus(object sender, RoutedEventArgs e)
         {
-           if (!persianCalnedarPopup.IsOpen)
+            if (!persianCalnedarPopup.IsOpen)
                 return; // Ignore
+
+            if (Application.Current == null)
+                return;
 
             var focusElt = FocusManager.GetFocusedElement(Application.Current.MainWindow) as DependencyObject;
             while (focusElt != null)
@@ -192,6 +195,7 @@ namespace WpfPersianDatePicker.Views
 
                 focusElt = VisualTreeHelper.GetParent(focusElt);
             }
+
             persianCalnedarPopup.IsOpen = false; // Lost focus            
         }
 
