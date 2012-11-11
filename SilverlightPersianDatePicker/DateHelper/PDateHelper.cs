@@ -12,9 +12,25 @@ namespace SilverlightPersianDatePicker.DateHelper
     /// </author>    
     public static class PDateHelper
     {
-        #region Methods (5)
+        #region Methods
 
-        // Public Methods (5) 
+        // Public Methods
+
+        public static DateTime? DateTimeTryParse(this object data)
+        {
+            if (data == null)
+                return null;
+
+            if (data.GetType().Equals(typeof(DateTime)))
+                return (DateTime)data;
+
+            DateTime result;
+            if (DateTime.TryParse((string)data, CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
+                return result;
+
+            return null;
+        }
+
         /// <summary>
         /// Finds 1st day of the given year and month.
         /// </summary>

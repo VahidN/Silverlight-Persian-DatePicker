@@ -140,9 +140,9 @@ namespace SilverlightPersianDatePicker.Views
                 return;
             }
 
-            DateTime result;
-            if (!DateTime.TryParse(eDate, out result)) return;
-            var gDate = result;
+            DateTime? result = e.NewValue.DateTimeTryParse();
+            if (!result.HasValue) return;
+            var gDate = result.Value;
 
             //تبديل به تاريخ فارسي
             int year, month, day;

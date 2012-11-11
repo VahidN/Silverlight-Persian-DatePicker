@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
+using System.Windows.Media.Animation;
 using WpfPersianDatePicker.DateHelper;
 using WpfPersianDatePicker.ViewModels;
-using System.Windows.Media.Animation;
 
 namespace WpfPersianDatePicker.Views
 {
@@ -138,9 +139,9 @@ namespace WpfPersianDatePicker.Views
             var eDate = e.NewValue.ToString();
             if (string.IsNullOrWhiteSpace(eDate)) return;
 
-            DateTime result;
-            if (!DateTime.TryParse(eDate, out result)) return;
-            var gDate = result;
+            DateTime? result = e.NewValue.DateTimeTryParse();
+            if (!result.HasValue) return;
+            var gDate = result.Value;
 
             //تبديل به تاريخ فارسي
             int year, month, day;

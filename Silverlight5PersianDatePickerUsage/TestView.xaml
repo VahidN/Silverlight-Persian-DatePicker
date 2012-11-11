@@ -6,7 +6,7 @@
     xmlns:vm="clr-namespace:SilverlightPersianDatePickerUsage.ViewModel"
     xmlns:dp="clr-namespace:SilverlightPersianDatePicker.Views;assembly=Silverlight5PersianDatePicker" 
     mc:Ignorable="d" FlowDirection="RightToLeft" FontFamily="Tahoma" FontSize="11"
-    d:DesignHeight="300" d:DesignWidth="400">
+    d:DesignHeight="300" d:DesignWidth="400">    
     <UserControl.Resources>
         <vm:TestViewViewModel x:Key="vmTestViewViewModel" />
     </UserControl.Resources>
