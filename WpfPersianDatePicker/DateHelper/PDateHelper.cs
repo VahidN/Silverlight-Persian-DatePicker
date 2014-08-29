@@ -91,6 +91,12 @@ namespace WpfPersianDatePicker.DateHelper
 		public static bool GregorianToHijri(int inYear, int inMonth, int inDay,
 											out int outYear, out int outMonth, out int outDay)
 		{
+		    if (inYear == 1 && inMonth == 1 && inDay == 1)
+		    {
+                setInvalidDate(out outYear, out outMonth, out outDay);
+                return false;
+		    }
+
 			try
 			{
 				var ym = inYear;
@@ -105,14 +111,19 @@ namespace WpfPersianDatePicker.DateHelper
 			}
 			catch //invalid date
 			{
-				outYear = -1;
-				outMonth = -1;
-				outDay = -1;
-				return false;
+			    setInvalidDate(out outYear, out outMonth, out outDay);
+			    return false;
 			}
 		}
 
-		/// <summary>
+	    private static void setInvalidDate(out int outYear, out int outMonth, out int outDay)
+	    {
+	        outYear = -1;
+	        outMonth = -1;
+	        outDay = -1;
+	    }
+
+	    /// <summary>
 		/// Converts Hijri date To Gregorian date.
 		/// </summary>
 		/// <param name="inYear"></param>
@@ -141,9 +152,7 @@ namespace WpfPersianDatePicker.DateHelper
 			}
 			catch //invalid date
 			{
-				outYear = -1;
-				outMonth = -1;
-				outDay = -1;
+                setInvalidDate(out outYear, out outMonth, out outDay);
 				return false;
 			}
 		}
