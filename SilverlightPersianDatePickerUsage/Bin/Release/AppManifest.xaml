@@ -1,9 +1,9 @@
-﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="SilverlightPersianDatePickerUsage" EntryPointType="SilverlightPersianDatePickerUsage.App" RuntimeVersion="4.0.50826.0">
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="SilverlightPersianDatePickerUsage" EntryPointType="SilverlightPersianDatePickerUsage.App" RuntimeVersion="5.0.61118.0">
   <Deployment.Parts>
     <AssemblyPart x:Name="SilverlightPersianDatePickerUsage" Source="SilverlightPersianDatePickerUsage.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Navigation" Source="System.Windows.Controls.Navigation.dll" />
   </Deployment.Parts>
   <Deployment.ExternalParts>
     <ExtensionPart Source="SilverlightPersianDatePicker.zip" />
-    <ExtensionPart Source="System.Windows.Controls.Navigation.zip" />
   </Deployment.ExternalParts>
 </Deployment>

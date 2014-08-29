@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
@@ -184,7 +185,11 @@ namespace WpfPersianDatePicker.Views
             if (Application.Current == null)
                 return;
 
-            var focusElt = FocusManager.GetFocusedElement(Application.Current.MainWindow) as DependencyObject;
+            var activeWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
+            if (activeWindow == null)
+                return;
+
+            var focusElt = FocusManager.GetFocusedElement(activeWindow) as DependencyObject;
             while (focusElt != null)
             {
                 if (focusElt is PCalendar)

@@ -4,398 +4,79 @@
         <name>SilverlightPersianDatePicker</name>
     </assembly>
     <members>
-        <member name="T:SilverlightPersianDatePicker.Views.PCalendar">
+        <member name="T:SilverlightPersianDatePicker.Brushes.CustomBrushes">
             <summary>
-            Calendar's view class.
+            Different custom brushes for cells of the calendar.
             </summary>
             <author>
               <name>Vahid Nasiri</name>
               <email>vahid_nasiri@yahoo.com</email>
             </author>    
         </member>
-        <member name="M:SilverlightPersianDatePicker.Views.PCalendar.InitializeComponent">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.BorderBlueBackground">
             <summary>
-            InitializeComponent
+            Normal cells background brush.
             </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PCalendar.SelectedDateProperty">
-            <summary>
-            Selected Gregorian Date.
-            </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PCalendar.SelectedPersianDateProperty">
-            <summary>
-            Selected Persian Date.
-            </summary>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Views.PCalendar.#ctor">
-            <summary>
-            Initialization point.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PCalendar.SelectedDate">
-            <summary>
-            Selected Gregorian Date.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PCalendar.SelectedPersianDate">
-            <summary>
-            Selected Persian Date.
-            </summary>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.DateHelper.PDateHelper">
-            <summary>
-            Persian Date Helper class
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.Find1StDayOfMonth(System.Int32,System.Int32)">
-            <summary>
-            Finds 1st day of the given year and month.
-            </summary>
-            <param name="year"></param>
-            <param name="monthIndex"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.GregorianToHijri(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.CellsBorederBrush">
             <summary>
-            Converts Gregorian date To Hijri date.
+            Normal cells BorederBrush.
             </summary>
-            <param name="inYear"></param>
-            <param name="inMonth"></param>
-            <param name="inDay"></param>
-            <param name="outYear"></param>
-            <param name="outMonth"></param>
-            <param name="outDay"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.HijriToGregorian(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.CellsForeground">
             <summary>
-            Converts Hijri date To Gregorian date.
+            Normal cells texts Foreground.
             </summary>
-            <param name="inYear"></param>
-            <param name="inMonth"></param>
-            <param name="inDay"></param>
-            <param name="outYear"></param>
-            <param name="outMonth"></param>
-            <param name="outDay"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.IsLeapYear(System.Int32)">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderBackground">
             <summary>
-            Is a given year leap?
+            Background's brush of header.
             </summary>
-            <param name="year"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.IsValid(System.Int32,System.Int32,System.Int32)">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderBorderBrush">
             <summary>
-            Is a given date valid?
+            BorderBrush of Header.
             </summary>
-            <param name="year"></param>
-            <param name="month"></param>
-            <param name="day"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.ExtractPersianDateParts(System.String)">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderForeground">
             <summary>
-            Extracts year/month/day parts of a given Persian date string.
+            Header's Foreground
             </summary>
-            <param name="inData">Persian date</param>
             <returns></returns>
         </member>
-        <member name="T:SilverlightPersianDatePicker.Views.PDatePicker">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HighlightBackground">
             <summary>
-            PDatePicker's view class
+            Background brush of selected cells.
             </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.SelectedDateProperty">
-            <summary>
-            Selected Gregorian Date.
-            </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.SelectedPersianDateProperty">
-            <summary>
-            Selected Persian Date.
-            </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxHeightProperty">
-            <summary>
-            Height of the TextBox.
-            </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidthProperty">
-            <summary>
-            Width of the TextBox.
-            </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxIsReadOnlyProperty">
-            <summary>
-            IsReadOnly of the TextBox.
-            </summary>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.#ctor">
-            <summary>
-            Initialization point.
-            </summary>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.SelectedDate">
-            <summary>
-            Selected Gregorian Date.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.SelectedPersianDate">
-            <summary>
-            Selected Persian Date.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxHeight">
-            <summary>
-            Height of the TextBox.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidth">
-            <summary>
-            Width of the TextBox.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxIsReadOnly">
-            <summary>
-            IsReadOnly of the TextBox.
-            </summary>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel">
-            <summary>
-            Persian CalendarViewModel class.
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="M:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.#ctor">
-            <summary>
-            Initialization point.
-            </summary>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.SelectThisDay(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Selecting a day from view.
-            </summary>
-            <param name="year"></param>
-            <param name="month"></param>
-            <param name="day"></param>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.CalendarGUIData">
-            <summary>
-            Notifies GUI about the changes in CalendarGUIData.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ClickNext">
-            <summary>
-            ClickNext event handler.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ClickPrev">
-            <summary>
-            ClickPrev event handler.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.DayClick">
-            <summary>
-            DayClick event handler.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.DaysInfo">
-            <summary>
-            Notifies GUI about current view data of the calendar.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ShowTodayClick">
-            <summary>
-            ShowTodayClick event handler.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.TitleClick">
-            <summary>
-            TitleClick event handler.
-            </summary>
-        </member>
-        <member name="E:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.StartAnimation">
-            <summary>
-            StartAnimation Event.
-            </summary>
-        </member>
-        <member name="E:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.PropertyChanged">
-            <summary>
-            PropertyChanged notification.
-            </summary>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.StartAnimationEventHandler">
-            <summary>
-            Our custom delegate for starting an animation after each update.
-            </summary>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.Models.CalendarGUI">
-            <summary>
-            General info's of a calendar's page.
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.HeaderText">
-            <summary>
-            HeaderText of the calendar.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.SelectedDate">
-            <summary>
-            SelectedDate in Gregorian format.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.SelectedPersianDate">
-            <summary>
-            SelectedDate in Persian format.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.Today">
-            <summary>
-            Shows today's string.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.UniformGridColumns">
-            <summary>
-            Number of UniformGrid's Columns.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.UniformGridRows">
-            <summary>
-            Number of UniformGrid's Rows.
-            </summary>
-        </member>
-        <member name="E:SilverlightPersianDatePicker.Models.CalendarGUI.PropertyChanged">
-            <summary>
-            PropertyChanged notification.
-            </summary>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.DateHelper.Names">
-            <summary>
-            Default names of the Persian calendar.
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="F:SilverlightPersianDatePicker.DateHelper.Names.MonthNames">
-            <summary>
-            MonthNames in the Persian calendar.
-            </summary>
-        </member>
-        <member name="F:SilverlightPersianDatePicker.DateHelper.Names.DaysOfWeek">
-            <summary>
-            DaysOfWeek in the Persian calendar.
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:SilverlightPersianDatePicker.DateHelper.ResilientDate.ToResilientPersianDate(System.String)" -->
-        <member name="T:SilverlightPersianDatePicker.Converters.ToPersianNumberConverter">
-            <summary>
-            IValueConverter class for converting English numbers to Persian numbers in reports.
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="T:SilverlightPersianDatePicker.Models.DayInfo">
-            <summary>
-            Calendar's cells info model.
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.BackgroundBrush">
-            <summary>
-            BackgroundBrush of a cell.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.BorderBrush">
-            <summary>
-            BorderBrush of a cell.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.CellHeight">
-            <summary>
-            Height of a cell.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.CellWidth">
-            <summary>
-            Width of a cell.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.FontWeight">
-            <summary>
-            FontWeight of a cell's Text.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.Foreground">
-            <summary>
-            Foreground of a cell's Text.
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.HyperlinkIsEnabled">
-            <summary>
-            Is Hyperlink of a cell enabled?
-            </summary>
-        </member>
-        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.Number">
-            <summary>
-            Text of a cell.
-            </summary>
-        </member>
-        <member name="E:SilverlightPersianDatePicker.Models.DayInfo.PropertyChanged">
-            <summary>
-            PropertyChanged notification.
-            </summary>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.DateHelper.Numbers">
-            <summary>
-            English numbers to Persian numbers converter and vice versa.
-            </summary>
-            <author>
-              <name>Vahid Nasiri</name>
-              <email>vahid_nasiri@yahoo.com</email>
-            </author>    
-        </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.Numbers.ToPersianNumbers(System.String)">
-            <summary>
-            Converts English digits of a given string to their equivalent Persian digits.
-            </summary>
-            <param name="data">English number</param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.DateHelper.Numbers.ToEnglishNumbers(System.String)">
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HightlightBorderBrush">
             <summary>
-            Converts Persian digits of a given string to their equivalent English digits.
+            BorderBrush of selected cells.
             </summary>
-            <param name="data">Persian number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HightlightForeground">
+            <summary>
+            Foreground brush of selected cells.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.TodayBackground">
+            <summary>
+            Today's Background brush.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.TodayBorderBrush">
+            <summary>
+            Today's BorderBrush.
+            </summary>
             <returns></returns>
         </member>
         <member name="T:System.Windows.Controls.Primitives.UniformGrid">
@@ -493,11 +174,89 @@
             the grid.
             </summary>
         </member>
-        <member name="T:SilverlightPersianDatePicker.MVVMHelper.DelegateCommand`1">
+        <member name="T:SilverlightPersianDatePicker.Converters.ToPersianDateConverter">
             <summary>
-            Simplifies SL4 commanding.
+            IValueConverter class for converting Gregorian Date to Persian Date.
             </summary>
-            <typeparam name="T"></typeparam>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Converters.ToPersianNumberConverter">
+            <summary>
+            IValueConverter class for converting English numbers to Persian numbers in reports.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.CalendarMode">
+            <summary>
+            Different supported visual modes of the Calendar.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Month">
+            <summary>
+            Month view of the Calendar.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Year">
+            <summary>
+            Year view of the Calendar.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Decade">
+            <summary>
+            Decade view of the Calendar.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.Names">
+            <summary>
+            Default names of the Persian calendar.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.Names.MonthNames">
+            <summary>
+            MonthNames in the Persian calendar.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.DateHelper.Names.DaysOfWeek">
+            <summary>
+            DaysOfWeek in the Persian calendar.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.DateHelper.Numbers">
+            <summary>
+            English numbers to Persian numbers converter and vice versa.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.Numbers.ToPersianNumbers(System.String)">
+            <summary>
+            Converts English digits of a given string to their equivalent Persian digits.
+            </summary>
+            <param name="data">English number</param>
+            <returns></returns>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.DateHelper.Numbers.ToEnglishNumbers(System.String)">
+            <summary>
+            Converts Persian digits of a given string to their equivalent English digits.
+            </summary>
+            <param name="data">Persian number</param>
+            <returns></returns>
         </member>
         <member name="T:System.Globalization.PersianCalendar">
             <summary>
@@ -706,113 +465,354 @@
             <property_value>The last year of a 100-year range that can be represented by a 2-digit year.</property_value>
             <remarks>This property allows a 2-digit year to be properly translated to a 4-digit year. For example, if this property is set to 1429, the 100-year range is from 1330 to 1429; therefore, a 2-digit value of 30 is interpreted as 1330, while a 2-digit value of 29 is interpreted as 1429.</remarks>
         </member>
-        <member name="T:SilverlightPersianDatePicker.Brushes.CustomBrushes">
+        <member name="T:SilverlightPersianDatePicker.DateHelper.PDateHelper">
             <summary>
-            Different custom brushes for cells of the calendar.
+            Persian Date Helper class
             </summary>
             <author>
               <name>Vahid Nasiri</name>
               <email>vahid_nasiri@yahoo.com</email>
             </author>    
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.BorderBlueBackground">
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.Find1StDayOfMonth(System.Int32,System.Int32)">
             <summary>
-            Normal cells background brush.
+            Finds 1st day of the given year and month.
             </summary>
+            <param name="year"></param>
+            <param name="monthIndex"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.CellsBorederBrush">
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.GregorianToHijri(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
             <summary>
-            Normal cells BorederBrush.
+            Converts Gregorian date To Hijri date.
             </summary>
+            <param name="inYear"></param>
+            <param name="inMonth"></param>
+            <param name="inDay"></param>
+            <param name="outYear"></param>
+            <param name="outMonth"></param>
+            <param name="outDay"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.CellsForeground">
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.HijriToGregorian(System.Int32,System.Int32,System.Int32,System.Int32@,System.Int32@,System.Int32@)">
             <summary>
-            Normal cells texts Foreground.
+            Converts Hijri date To Gregorian date.
             </summary>
+            <param name="inYear"></param>
+            <param name="inMonth"></param>
+            <param name="inDay"></param>
+            <param name="outYear"></param>
+            <param name="outMonth"></param>
+            <param name="outDay"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderBackground">
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.IsLeapYear(System.Int32)">
             <summary>
-            Background's brush of header.
+            Is a given year leap?
             </summary>
+            <param name="year"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderBorderBrush">
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.IsValid(System.Int32,System.Int32,System.Int32)">
             <summary>
-            BorderBrush of Header.
+            Is a given date valid?
             </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <param name="day"></param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HeaderForeground">
+        <member name="M:SilverlightPersianDatePicker.DateHelper.PDateHelper.ExtractPersianDateParts(System.String)">
             <summary>
-            Header's Foreground
+            Extracts year/month/day parts of a given Persian date string.
             </summary>
+            <param name="inData">Persian date</param>
             <returns></returns>
         </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HighlightBackground">
+        <!-- Badly formed XML comment ignored for member "M:SilverlightPersianDatePicker.DateHelper.ResilientDate.ToResilientPersianDate(System.String)" -->
+        <member name="T:SilverlightPersianDatePicker.Models.CalendarGUI">
             <summary>
-            Background brush of selected cells.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HightlightBorderBrush">
-            <summary>
-            BorderBrush of selected cells.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.HightlightForeground">
-            <summary>
-            Foreground brush of selected cells.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.TodayBackground">
-            <summary>
-            Today's Background brush.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:SilverlightPersianDatePicker.Brushes.CustomBrushes.TodayBorderBrush">
-            <summary>
-            Today's BorderBrush.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:SilverlightPersianDatePicker.DateHelper.CalendarMode">
-            <summary>
-            Different supported visual modes of the Calendar.
+            General info's of a calendar's page.
             </summary>
             <author>
               <name>Vahid Nasiri</name>
               <email>vahid_nasiri@yahoo.com</email>
             </author>    
         </member>
-        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Month">
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.HeaderText">
             <summary>
-            Month view of the Calendar.
+            HeaderText of the calendar.
             </summary>
         </member>
-        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Year">
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.SelectedDate">
             <summary>
-            Year view of the Calendar.
+            SelectedDate in Gregorian format.
             </summary>
         </member>
-        <member name="F:SilverlightPersianDatePicker.DateHelper.CalendarMode.Decade">
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.SelectedPersianDate">
             <summary>
-            Decade view of the Calendar.
+            SelectedDate in Persian format.
             </summary>
         </member>
-        <member name="T:SilverlightPersianDatePicker.Converters.ToPersianDateConverter">
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.Today">
             <summary>
-            IValueConverter class for converting Gregorian Date to Persian Date.
+            Shows today's string.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.UniformGridColumns">
+            <summary>
+            Number of UniformGrid's Columns.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.CalendarGUI.UniformGridRows">
+            <summary>
+            Number of UniformGrid's Rows.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.Models.CalendarGUI.PropertyChanged">
+            <summary>
+            PropertyChanged notification.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Models.DayInfo">
+            <summary>
+            Calendar's cells info model.
             </summary>
             <author>
               <name>Vahid Nasiri</name>
               <email>vahid_nasiri@yahoo.com</email>
             </author>    
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.BackgroundBrush">
+            <summary>
+            BackgroundBrush of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.BorderBrush">
+            <summary>
+            BorderBrush of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.CellHeight">
+            <summary>
+            Height of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.CellWidth">
+            <summary>
+            Width of a cell.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.FontWeight">
+            <summary>
+            FontWeight of a cell's Text.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.Foreground">
+            <summary>
+            Foreground of a cell's Text.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.HyperlinkIsEnabled">
+            <summary>
+            Is Hyperlink of a cell enabled?
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Models.DayInfo.Number">
+            <summary>
+            Text of a cell.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.Models.DayInfo.PropertyChanged">
+            <summary>
+            PropertyChanged notification.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.MVVMHelper.DelegateCommand`1">
+            <summary>
+            Simplifies SL4 commanding.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel">
+            <summary>
+            Persian CalendarViewModel class.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="M:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.#ctor">
+            <summary>
+            Initialization point.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.SelectThisDay(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Selecting a day from view.
+            </summary>
+            <param name="year"></param>
+            <param name="month"></param>
+            <param name="day"></param>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.CalendarGUIData">
+            <summary>
+            Notifies GUI about the changes in CalendarGUIData.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ClickNext">
+            <summary>
+            ClickNext event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ClickPrev">
+            <summary>
+            ClickPrev event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.DayClick">
+            <summary>
+            DayClick event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.DaysInfo">
+            <summary>
+            Notifies GUI about current view data of the calendar.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.ShowTodayClick">
+            <summary>
+            ShowTodayClick event handler.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.TitleClick">
+            <summary>
+            TitleClick event handler.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.StartAnimation">
+            <summary>
+            StartAnimation Event.
+            </summary>
+        </member>
+        <member name="E:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.PropertyChanged">
+            <summary>
+            PropertyChanged notification.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.ViewModels.PCalendarViewModel.StartAnimationEventHandler">
+            <summary>
+            Our custom delegate for starting an animation after each update.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Views.PCalendar">
+            <summary>
+            Calendar's view class.
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PCalendar.SelectedDateProperty">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PCalendar.SelectedPersianDateProperty">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PCalendar.#ctor">
+            <summary>
+            Initialization point.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PCalendar.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PCalendar.SelectedDate">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PCalendar.SelectedPersianDate">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="T:SilverlightPersianDatePicker.Views.PDatePicker">
+            <summary>
+            PDatePicker's view class
+            </summary>
+            <author>
+              <name>Vahid Nasiri</name>
+              <email>vahid_nasiri@yahoo.com</email>
+            </author>    
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.SelectedDateProperty">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.SelectedPersianDateProperty">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxHeightProperty">
+            <summary>
+            Height of the TextBox.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidthProperty">
+            <summary>
+            Width of the TextBox.
+            </summary>
+        </member>
+        <member name="F:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxIsReadOnlyProperty">
+            <summary>
+            IsReadOnly of the TextBox.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.#ctor">
+            <summary>
+            Initialization point.
+            </summary>
+        </member>
+        <member name="M:SilverlightPersianDatePicker.Views.PDatePicker.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.SelectedDate">
+            <summary>
+            Selected Gregorian Date.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.SelectedPersianDate">
+            <summary>
+            Selected Persian Date.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxHeight">
+            <summary>
+            Height of the TextBox.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxWidth">
+            <summary>
+            Width of the TextBox.
+            </summary>
+        </member>
+        <member name="P:SilverlightPersianDatePicker.Views.PDatePicker.TextBoxIsReadOnly">
+            <summary>
+            IsReadOnly of the TextBox.
+            </summary>
         </member>
     </members>
 </doc>

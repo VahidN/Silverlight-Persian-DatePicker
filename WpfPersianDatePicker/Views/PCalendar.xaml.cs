@@ -1,8 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.Windows;
-using System.Windows.Media.Animation;
 using WpfPersianDatePicker.DateHelper;
 using WpfPersianDatePicker.ViewModels;
 
@@ -51,7 +49,6 @@ namespace WpfPersianDatePicker.Views
             InitializeComponent();
             _calendarViewModel = new PCalendarViewModel();
             LayoutRoot.DataContext = _calendarViewModel;
-            _calendarViewModel.StartAnimation += calendarViewModelStartAnimation;
             Loaded += pCalendarLoaded;
             Unloaded += pCalendarUnloaded;
         }
@@ -100,13 +97,6 @@ namespace WpfPersianDatePicker.Views
                 SelectedDate = _calendarViewModel.CalendarGUIData.SelectedDate.ToString("yyyy/MM/dd");
                 SelectedPersianDate = _calendarViewModel.CalendarGUIData.SelectedPersianDate;
             }
-        }
-
-        void calendarViewModelStartAnimation()
-        {
-            var stBoard = Resources["FlipAnim1"] as Storyboard;
-            if (stBoard == null) return;
-            stBoard.Begin();
         }
 
         void pCalendarLoaded(object sender, RoutedEventArgs e)

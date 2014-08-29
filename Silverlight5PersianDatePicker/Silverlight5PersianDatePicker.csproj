@@ -50,7 +50,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SilverlightPersianDatePicker.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -111,9 +112,6 @@
     <Compile Include="Views\PDatePicker.xaml.cs">
       <DependentUpon>PDatePicker.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SilverlightPersianDatePicker.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\PCalendar.xaml">
