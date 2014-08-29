@@ -9,11 +9,11 @@
              FontFamily="Tahoma" FontSize="11"                            
              d:DesignHeight="400" d:DesignWidth="600">
     <UserControl.Resources>
-        <ResourceDictionary x:Key="res1">
+        <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <conv:ToPersianNumberConverter x:Key="convToPersianNumberConverter" />
+            <conv:ToPersianNumberConverter x:Key="ConvToPersianNumberConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Name="LayoutRoot"                                 
@@ -42,7 +42,7 @@
                                 ValidatesOnExceptions=True,
                                 UpdateSourceTrigger=PropertyChanged,
                                 Mode=TwoWay,
-                                Converter={StaticResource convToPersianNumberConverter}}"
+                                Converter={StaticResource ConvToPersianNumberConverter}}"
                      HorizontalAlignment="Stretch" 
                      TextChanged="dateTextBoxTextChanged"                  
                      >
@@ -63,7 +63,6 @@
                                        VerticalAlignment="Top"
                                        PopupAnimation="Fade"
                                        AllowsTransparency="True"               
-                                       PlacementTarget="{Binding ElementName=openCalendarButton}"
                                        StaysOpen="false">
                                     <Border Background="White" 
                                                         BorderThickness="1" 
