@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Silverlight.4.Persian.DatePicker</id>
+    <version>1.3</version>
+    <authors>Vahid Nasiri</authors>
+    <owners>Vahid Nasiri</owners>
+    <licenseUrl>http://slpdatepicker.codeplex.com/license</licenseUrl>
+    <projectUrl>http://slpdatepicker.codeplex.com/</projectUrl>
+    <iconUrl>https://slpdatepicker.svn.codeplex.com/svn/SilverlightPersianDatePicker/Views/Images/date.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Silverlight 4 Persian DatePicker Control</description>
+    <tags>Silverlight WPF Persian DatePicker</tags>
+  </metadata>
+  <files>
+    <file src="..\SilverlightPersianDatePicker\Bin\Release\*.dll" target="lib" />
+    <file src="..\SilverlightPersianDatePicker\Bin\Release\*.pdb" target="lib" />
+	<file src="..\SilverlightPersianDatePicker\Bin\Release\*.xml" target="lib" />
+  </files>
+</package>
