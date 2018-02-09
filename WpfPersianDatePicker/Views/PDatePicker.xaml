@@ -78,8 +78,8 @@
                                         </Border.Effect>
                                         <StackPanel Orientation="Vertical">
                                             <Views1:PCalendar
-                                                                SelectedPersianDate="{Binding SelectedPersianDate, Mode=TwoWay}"
-                                                                SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
+                                                                SelectedPersianDate="{Binding SelectedPersianDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                                SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                                                 x:Name="pcal1"  />
                                         </StackPanel>
                                     </Border>

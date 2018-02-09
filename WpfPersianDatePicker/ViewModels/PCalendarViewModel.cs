@@ -17,7 +17,7 @@ namespace WpfPersianDatePicker.ViewModels
     /// <author>
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
-    /// </author>    
+    /// </author>
     public class PCalendarViewModel : INotifyPropertyChanged
     {
         #region Fields (8)
@@ -112,13 +112,13 @@ namespace WpfPersianDatePicker.ViewModels
 
         #region Delegates and Events (2)
 
-        // Delegates (1) 
+        // Delegates (1)
 
         /// <summary>
         /// Our custom delegate for starting an animation after each update.
         /// </summary>
         public delegate void StartAnimationEventHandler();
-        // Events (1) 
+        // Events (1)
 
         /// <summary>
         /// StartAnimation Event.
@@ -129,7 +129,7 @@ namespace WpfPersianDatePicker.ViewModels
 
         #region Methods (24)
 
-        // Public Methods (1) 
+        // Public Methods (1)
 
         /// <summary>
         /// Selecting a day from view.
@@ -143,7 +143,7 @@ namespace WpfPersianDatePicker.ViewModels
             //select that day
             highlightThisday(year, month, day);
         }
-        // Private Methods (23) 
+        // Private Methods (23)
 
         private static bool canClickNext(string obj)
         {
@@ -458,7 +458,7 @@ namespace WpfPersianDatePicker.ViewModels
         private void resetGui()
         {
             CalendarGUIData.SelectedPersianDate = string.Empty;
-            CalendarGUIData.SelectedDate = default(DateTime);
+            CalendarGUIData.SelectedDate = null;
             raisePropertyChanged("CalendarGUIData");
         }
 

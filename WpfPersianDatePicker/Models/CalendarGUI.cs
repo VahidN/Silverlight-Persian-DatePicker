@@ -9,13 +9,13 @@ namespace WpfPersianDatePicker.Models
     /// <author>
     ///   <name>Vahid Nasiri</name>
     ///   <email>vahid_nasiri@yahoo.com</email>
-    /// </author>    
+    /// </author>
     public class CalendarGUI : INotifyPropertyChanged
     {
         #region Fields (6)
 
         private string _headerText;
-        private DateTime _selectedDate;
+        private DateTime? _selectedDate;
         private string _selectedPersianDate;
         private string _today;
         private int _uniformGridColumns = 7;
@@ -42,7 +42,7 @@ namespace WpfPersianDatePicker.Models
         /// <summary>
         /// SelectedDate in Gregorian format.
         /// </summary>
-        public DateTime SelectedDate
+        public DateTime? SelectedDate
         {
             get
             {
